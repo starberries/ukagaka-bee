@@ -70,10 +70,9 @@ On_sakura.recommendsites
 	FormatLinks(recommendsites_sakura)
 }
 
-//These are the websites linked in the top option of the sakura's right click menu. The format is simple; write the label of the link on the left followed by a semicolon, and then on the right, the url to link to. These should be separate strings.
 recommendsites_sakura : array
 {
-	"Link label";	"https://link.example.com/link/to/whatever/here/"
+	"On Starlit Tides";	"https://on-starlit-tides.thecomicseries.com/"
 }
 
 On_sakura.portalsites 
@@ -84,8 +83,7 @@ On_sakura.portalsites
 //These are the websites linked in the second option of the sakura's right click menu. Same as above
 portalsites_sakura : array
 {
-	"Another link label";	"https://link.example.com/link/to/whatever/here/again/"
-	"A third link label";	"https://link.example.com/link/to/whatever/a/third/time/you/can/add/as/many/as/you/want/"
+	"On Starlit Tides";	"https://on-starlit-tides.thecomicseries.com/"
 }
 
 On_kero.recommendsites
