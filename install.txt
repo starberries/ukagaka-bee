@@ -1,0 +1,8 @@
+charset,UTF-8
+type,ghost
+
+name,Bee
+directory,starlit_bee
+
+balloon.directory,maist_comic
+balloon.source.directory,balloon
