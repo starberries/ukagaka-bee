@@ -39,9 +39,6 @@ OnWindowStateRestore
 	OnSurfaceRestore
 }
 
-//Network update url. Make sure you have a / on the end of the url or it will give a warning every time users try to update! If you don't plan to use network updates you can remove this
-//IF YOU'RE USING GITHUB FOR NETWORK UPDATES: DO NOT USE github.io URLS! It will cause you pain and suffering. USE raw.githubusercontent!!!
-//To get the raw.githubusercontent link super easy:
 //• Open your ghost's repo online
 //• navigate to the ghost's folder (the top level one, with install.txt, readme.txt, etc)
 //• Click on install.txt, or another text file on that level
@@ -50,7 +47,7 @@ OnWindowStateRestore
 //Tada! That's your url! Make sure you test it! The dev palette and script/network log can help with that
 On_homeurl
 {
-	""
+	"https://raw.githubusercontent.com/starberries/ukagaka-bee/refs/heads/main/"
 }
 
 

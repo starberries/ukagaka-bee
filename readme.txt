@@ -14,3 +14,9 @@ To-Do:
 
 Created by Mai Starberries
 My carrd. https://maistarberries.carrd.co/
+
+Some resources for making your own ghost!
+Zarla's GT template + walkthrough site: https://www.ashido.com/ukagaka/
+Zi's templates + guides https://ukagaka.zichqec.com/
+Ukagaka Dream Team's wiki https://ukagakadreamteam.com/wiki/guide_list
+UKADOC Project https://ukagakadreamteam.github.io/ukadoc/manual/index.html
