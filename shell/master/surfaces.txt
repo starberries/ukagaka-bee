@@ -1,12 +1,3 @@
-//Some quick notes:
-//1: surfaces.txt does NOT support same line comments. If you want to write a comment, ALWAYS PUT IT ON ITS OWN LINE. If you put comments after other bits of code in the same line, it may seem to work at first, but it can cause cryptic errors down the line. Save yourself the trouble. Always put comments on their own lines in here. Additionally, it doesn't do block comments with /* and */
-//2: The example blink code is set up with the new definition, which I recommend you use. Here is my guide to what that means: https://ukagaka.zichqec.com/guide/old_definition_vs_new_definition
-//If you want to use old definition, make sure to erase that 'version,1' bit.
-//3: It is very common for people to feel stuck on how to start, because they don't know what expressions to make without having dialogue, but they don't know what dialogue to write without having expressions. If you're feeling that way, I highly suggest using emoji as substitutes just to get you started! That may sound weird if you're not fond of emoji, but seriously, just give it a try. I've found that just writing a few messages in Discord and using the emoji to signify surface changes is a great help to get me past that initial hump where it feels impossible.
-//4: Also consider taking a look at Ukadoc's list of recommended surfaces! https://ukagakadreamteam.github.io/ukadoc/manual/descript_shell_surfaces.html#caption_standarddef This can give you an idea of how to start, but also, some external SHIORI events use these surfaces by default! If your ghost has them, it will react as intended! It's not required, but it's something you can consider.
-//5: If you'd like a bit more structure to start with, I have a shell template you can use! https://ukagaka.zichqec.com/template/simplicity_shell
-
-
 descript
 {
 	version,1
@@ -14,39 +5,447 @@ descript
 
 //—————————————————————————————— Sakura surfaces ——————————————————————————————
 
+//===== DEFAULT/NEUTRAL =============
 surface0
 {
-	collision0,0,0,130,65,head
-	
-	//Example code for blink animation - uncomment if you want it
-	//animation0.interval,random,4
-	//animation0.pattern0,overlay,101,0,0,0
-	//animation0.pattern1,overlay,102,100,0,0
-	//animation0.pattern2,overlay,-1,50,0,0
-	
-	
-	//Example code for a talk animation - uncomment if you want it
-	// animation1.interval,talk,4
-	// animation1.pattern0,alternativestart,(2,3,4)
-	
-	// animation2.interval,never
-	// animation2.pattern0,overlay,103,0,0,0
-	// animation2.pattern1,overlay,104,200,0,0
-	// animation2.pattern2,overlay,-1,200,0,0
-	
-	// animation3.interval,never
-	// animation3.pattern0,overlay,103,0,0,0
-	// animation3.pattern1,overlay,-1,200,0,0
-	
-	// animation4.interval,never
-	// animation4.pattern0,overlay,104,0,0,0
-	// animation4.pattern1,overlay,105,200,0,0
-	// animation4.pattern2,overlay,-1,200,0,0
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface101
+{
+	element0,overlay,bee_pose_neutral.png,0,0
 }
 
-//—————————————————————————————— Kero surfaces ——————————————————————————————
-
-surface10
+// Alt
+surface200
 {
-	collision0,0,0,130,65,head
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+surface201
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append0,101,200,201
+{
+	// element0,overlay,bee_pose_neutral.png,0,0
+	element1,overlay,bee_mouth_mneutral.png,0,0
+	element3,overlay,bee_nose_normal.png,0,0
+	// element4,overlay,bee_eyes_open.png,0,0
+	element5,overlay,bee_eyebrows_neutral.png,0,0
+	element6,overlay,bee_tuft_up.png,0,0
+}
+
+//===== SMILE =============
+surface102
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface202
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append102,202
+{
+	element1,overlay,bee_mouth_smile.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	// element3,overlay,bee_eyes_happy.png,0,0
+	element4,overlay,bee_eyebrows_up.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+
+//===== HAPPY =============
+surface103
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface203
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append103,203
+{
+	element1,overlay,bee_mouth_smile.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_happy.png,0,0
+	element4,overlay,bee_eyebrows_up.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//Happy Alt
+surface104
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface204
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append104,204
+{
+	element1,overlay,bee_mouth_happy.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_happy.png,0,0
+	element4,overlay,bee_eyebrows_up.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== STARRY =============
+surface105
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface205
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append105,205
+{
+	element1,overlay,bee_mouth_happy.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_starry.png,0,0
+	element4,overlay,bee_eyebrows_up.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== PROUD =============
+surface106
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface206
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append106,206
+{
+	element1,overlay,bee_mouth_catsmile.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_closed.png,0,0
+	element4,overlay,bee_eyebrows_down.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== THINK =============
+surface107
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface207
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append107,207
+{
+	element1,overlay,bee_mouth_displeased.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_think.png,0,0
+	element4,overlay,bee_eyebrows_focus.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== FROWN =============
+surface108
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface208
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append108,208
+{
+	element1,overlay,bee_mouth_pout.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_narrow.png,0,0
+	element4,overlay,bee_eyebrows_fierce.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== SAD =============
+surface109
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface209
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append109,209
+{
+	element1,overlay,bee_mouth_displeased.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_closed.png,0,0
+	element4,overlay,bee_eyebrows_furrow.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== UNAMUSED =============
+surface110
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface210
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append110,210
+{
+	element1,overlay,bee_mouth_mneutral.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_unamused.png,0,0
+	element4,overlay,bee_eyebrows_focus.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== POUT =============
+surface111
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface211
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append111,211
+{
+	element1,overlay,bee_mouth_pout.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_narrow.png,0,0
+	element4,overlay,bee_eyebrows_fierce.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== ANGRY =============
+surface112
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface212
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append112,212
+{
+	element1,overlay,bee_mouth_smile.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_squeeze.png,0,0
+	element4,overlay,bee_eyebrows_neutral.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== SURPRISED =============
+surface113
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface213
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append113,213
+{
+	element1,overlay,bee_mouth_open.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_wide.png,0,0
+	element4,overlay,bee_eyebrows_up.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== SHOCK =============
+surface114
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface214
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append114,214
+{
+	element1,overlay,bee_mouth_wide.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_shock.png,0,0
+	element4,overlay,bee_eyebrows_up.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== WORRY =============
+surface115
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface215
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append115,215
+{
+	element1,overlay,bee_mouth_squiggle.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_narrow.png,0,0
+	element4,overlay,bee_eyebrows_squished.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== SLEEP =============
+surface116
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface216
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append116,216
+{
+	element1,overlay,bee_mouth_mneutral.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_closed.png,0,0
+	element4,overlay,bee_eyebrows_neutral.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== TIRED =============
+surface117
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface217
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append117,217
+{
+	element1,overlay,bee_mouth_squiggle.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_drained.png,0,0
+	element4,overlay,bee_eyebrows_squished.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== ACK =============
+//(idk you got a better name? I'm open to suggestions)
+surface118
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface218
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append118,218
+{
+	element1,overlay,bee_mouth_wide.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_squeeze.png,0,0
+	element4,overlay,bee_eyebrows_neutral.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== EXCITED =============
+surface119
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface219
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append119,219
+{
+	element1,overlay,bee_mouth_smile.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_squeeze.png,0,0
+	element4,overlay,bee_eyebrows_neutral.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== EEP =============
+surface120
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface220
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append120,220
+{
+	element1,overlay,bee_mouth_squiggle.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_eep.png,0,0
+	element4,overlay,bee_eyebrows_squished.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== PANIC =============
+surface121
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface221
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append121,221
+{
+	element1,overlay,bee_mouth_wide.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_panic.png,0,0
+	element4,overlay,bee_eyebrows_furrow.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== GAMING NEUTRAL =============
+surface300
+{
+	element0,overlay,bee_pose_gaming.png,0,0
+	element1,overlay,bee_down_nose_normal.png,0,0
+	element3,overlay,bee_down_eyebrows_neutral.png,0,0
+	element4,overlay,bee_tuft_down.png,0,0
+
+}
+
+//===== GAMING LOOK UP =============
+surface301
+{
+	element0,overlay,bee_pose_gaming.png,0,0
+	element1,overlay,bee_down_nose_normal.png,0,0
+	element2,overlay,bee_down_eyes_look.png,0,0
+	element3,overlay,bee_down_eyebrows_neutral.png,0,0
+	element4,overlay,bee_tuft_down.png,0,0
 }
