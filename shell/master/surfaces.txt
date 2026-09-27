@@ -449,3 +449,225 @@ surface301
 	element3,overlay,bee_down_eyebrows_neutral.png,0,0
 	element4,overlay,bee_tuft_down.png,0,0
 }
+
+// -----------------------------------------------------
+// ===== ANIMATION PARTS =============
+// -----------------------------------------------------
+
+// Eye surfaces for neutral/looking up blink animation
+surface20 {
+	element0,overlay,bee_eyes_open.png,0,0
+}
+surface21 {
+	element0,overlay,bee_eyes_half.png,0,0
+}
+surface22 {
+	element0,overlay,bee_eyes_closed.png,0,0
+}
+
+// Eye surfaces for gaming/looking down blink animation
+surface30 {
+	element0,overlay,bee_down_eyes_open.png,0,0
+}
+surface31 {
+	element0,overlay,bee_down_eyes_half.png,0,0
+}
+surface32 {
+	element0,overlay,bee_down_eyes_closed.png,0,0
+}
+
+// Mouth surfaces for talk animation
+surface50 {
+	element0,overlay,bee_mouth_mneutral.png,0,0
+}
+surface51 {
+	element0,overlay,bee_mouth_teeth.png,0,0
+}
+surface52 {
+	element0,overlay,bee_mouth_open.png,0,0
+}
+surface53 {
+	element0,overlay,bee_mouth_happy.png,0,0
+}
+surface54 {
+	element0,overlay,bee_mouth_squiggle.png,0,0
+}
+
+// Hair for gaming blink animation fix
+surface1 {
+	element0,overlay,bee_tuft_down.png,0,0
+}
+
+// Collisions for neutral pose
+surface.append0,100-199 {
+	collision0,115,60,235,100,head
+	collision1,110,100,215,180,face
+	collision2,60,150,120,360,earL
+	collision3,215,100,320,380,earR
+}
+
+//Neutral Blink Animation
+surface.append0,101,102,200,201,202 {
+	animation20.interval,always
+	animation20.pattern0,overlayfast,20,0,0,0
+	// We're cheating to avoid putting a static eyes_open image on the base surface
+	// because layering is a bitch
+	animation20.pattern1,overlayfast,20,6000-8000,0,0
+	animation20.pattern2,overlayfast,21,500,0,0
+	animation20.pattern3,overlayfast,22,50,0,0
+	animation20.pattern4,overlayfast,21,100,0,0
+	animation20.pattern5,overlayfast,20,100,0,0
+}
+
+// Neutral Talk Animation
+surface.append0,101,201 {
+	animation50.interval,talk,4
+	animation50.pattern0,alternativestart,(51,52,53,54)
+	
+	animation51.interval,never
+	animation51.pattern0,overlay,51,0,0,0
+	animation51.pattern1,overlay,52,200,0,0
+	animation51.pattern2,overlay,-1,200,0,0
+
+	animation52.interval,never
+	animation52.pattern0,overlay,52,0,0,0
+	animation52.pattern1,overlay,51,200,0,0
+	animation52.pattern2,overlay,-1,200,0,0
+	
+	animation53.interval,never
+	animation53.pattern0,overlay,52,0,0,0
+	animation53.pattern1,overlay,-1,200,0,0
+	
+	animation54.interval,never
+	animation54.pattern0,overlay,51,0,0,0
+	animation54.pattern1,overlay,-1,200,0,0
+}
+
+// Smile Talk Animation
+surface.append105,102,103,202,203 {
+	animation55.interval,talk,4
+	animation55.pattern0,alternativestart,(56,57,58,59)
+	
+	animation56.interval,never
+	animation56.pattern0,overlay,53,0,0,0
+	animation56.pattern1,overlay,52,200,0,0
+	animation56.pattern2,overlay,-1,200,0,0
+
+	animation57.interval,never
+	animation57.pattern0,overlay,52,0,0,0
+	animation57.pattern1,overlay,53,200,0,0
+	animation57.pattern2,overlay,-1,200,0,0
+	
+	animation58.interval,never
+	animation58.pattern0,overlay,53,0,0,0
+	animation58.pattern1,overlay,-1,200,0,0
+	
+	animation59.interval,never
+	animation59.pattern0,overlay,52,0,0,0
+	animation59.pattern1,overlay,-1,200,0,0
+}
+
+//Game/Down Blink Animation
+surface.append300 {
+	animation30.interval,always
+	animation30.pattern0,overlayfast,30,0,0,0
+	// Still cheating over here
+	animation30.pattern1,overlayfast,30,6000-8000,0,0
+	animation30.pattern2,overlayfast,31,500,0,0
+	animation30.pattern3,overlayfast,32,50,0,0
+	animation30.pattern4,overlayfast,31,100,0,0
+	animation30.pattern5,overlayfast,30,100,0,0
+
+	// Hair over eyes fix
+	animation100.interval,always
+	animation100.pattern0,overlayfast,1,0,0,0
+	animation100.pattern1,overlayfast,1,100,0,0
+	
+}
+
+//————————————————————————————— Sakura aliases ——————————————————————————————
+
+sakura.surface.alias
+{
+	Default,[0]
+	neutral,[101]
+	smile,[102]
+	happy,[103]
+	starry,[105]
+	proud,[106]
+	think,[107]
+	frown,[108]
+	sad,[109]
+	unamused,[110]
+	pout,[111]
+	angry,[112]
+	surprise,[113]
+	shock,[114]
+	worry,[115]
+	sleep,[116]
+	tired,[117]
+	ack,[118]
+	excited,[119]
+	eep,[120]
+	panic,[121]
+	holdDefault,[200]
+	holdNeutral,[201]
+	holdSmile,[202]
+	holdHappy,[203,204]
+	holdStarry,[205]
+	holdProud,[206]
+	holdThink,[207]
+	holdFrown,[208]
+	holdSad,[209]
+	holdUnamused,[210]
+	holdPout,[211]
+	holdAngry,[212]
+	holdSurprise,[213]
+	holdShock,[214]
+	holdWorry,[215]
+	holdSleep,[216]
+	holdTired,[217]
+	holdAck,[218]
+	holdExcited,[219]
+	holdEep,[220]
+	holdPanic,[221]
+	gaming,[300]
+	gamingLook,[301]
+}
+
+
+//—————————————————————————————— Kero surfaces ——————————————————————————————
+
+surface10
+{
+	collision0,0,0,130,65,head
+}
+
+//--Unique Collision cursors------------------
+
+//To change the cursor differently over specific collisions
+
+sakura.cursor 
+{ 
+	mouseup0,Head,system:hand 
+	mousedown0,Head,system:finger 
+	mouseup1,Face,system:hand 
+	mousedown1,Face,system:finger
+	mouseup2,EarL,system:hand 
+	mouseup3,EarR,system:hand 
+}
+
+//Cursors: "arrow", "cross", "no", "hand", "grip", "finger", "wait", "text", "move", and "help".
+
+//kero.cursor for secondary character
+
+
+//--Tooltips------------------
+
+sakura.tooltips 
+{ 
+	Head,"This is Bee's head."
+	Face,"This is Bee's face."
+	EarL,"This is Bee's ear."
+	EarR,"This is Bee's ear."
+}
