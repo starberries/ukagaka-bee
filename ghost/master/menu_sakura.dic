@@ -22,8 +22,24 @@ OnSakuraMenu : all
 	"\n\n"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
+
+	if testing {
+		"\![*]\q[Disable debug mode,OnToggleDebug]\n\n"
+	} else {
+		"\![*]\q[Switch to debug mode,OnToggleDebug]\n\n"
+	}
 	
 	"\![*]\q[Cancel,blank]"	
+}
+
+OnToggleDebug
+{
+	testing = !testing
+	if testing {
+		"Debug mode enabled!"
+	} else {
+		"Debug mode disabled!"
+	}
 }
 
 OnLastTalk
