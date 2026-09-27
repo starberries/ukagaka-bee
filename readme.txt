@@ -1,5 +1,7 @@
 ﻿# README
 
+Made for the Digital Pet Jam - https://itch.io/jam/digital-pet-jam
+
 It's Beeeeee!!
 
 Bee of On Starlit Tides is a high school junior attending Blossom High in the cozy town of Port Blossom.
