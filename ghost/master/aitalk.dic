@@ -13,19 +13,70 @@ OnAiTalk
 
 RandomTalk : nonoverlap_pool
 {
-	"\0\s[0]Fill this with lots of random dialogue."
-	
-	//Some writing advice/inspo, since aitalk can be tough!
-	"\0\s[0]Consider what sort of angle you want to go with for your ghost?\w8 What sort of genre, if you will?\w8 Is your character on the user's desktop?\w8 Are they aware they're on a computer or have they been dragged to a strange place?\w8 What if the user is meeting them somewhere instead?\w8 What if they're visiting your ghost at home?\w8 At the office?\w8\n\nWhat if they know the user already?\w8 What if they are coworkers?\w8 Siblings?\w8 What if they're protecting you from something?\w8 There are \f[italics,1]so\f[italics,0] many possibilities for ways to go with this!\w8 Think about what's fun and interesting to do with your character!"
-	"\0\s[0]Content is the top priority!\w8 That's what this template is all about.\w8 Randomtalk is the heart and soul of your ghost, so make it count!\w8 You should be able to ignore almost everything else in the template if you want to.\w8 That being said, though, not all ghosts have randomtalk.\w8 If you're doing something else interesting or useful, that's great, and don't be afraid to cut this if it isn't what your ghost needs!"
-	"\0\s[0]How's your character feel about the user?\w8 Is the user a stranger to them?\w8 If so, do they like talking to strangers and learning about them/sharing with them?\w8 Or are they a loner that doesn't want to talk much?"
-	"\0\s[0]Do you want a narrator, or no?\w8 If you're going with a narrator, consider carefully how you use it!\w8 Many users don't like having their actions dictated to them too much, especially in randomtalk.\w8 But you could use it in other ways, to describe the environment and such."
-	"\0\s[0]If you're going to comment on things like months and seasons, think about what they mean to the character and what they'd have to say about them.\w8 It'd be kinda weird to be hanging out with someone and just say ""It's July"", right?\w8 Do they feel something strongly enough about July to talk about anything specific in July at all, much less call it out by name?\w8 Don't feel obligated to add dialogues about the months and such if you don't have anything you want to say about them!"
-	"\0\s[0]Ghosts don't need a ton of fancy functions to be cool and wonderful!\w8 If you really think about the idle dialogues and nail them, you'll have a fun ghost on your hands.\w8 So spend some time on this, and think about what you want to do!"
-	"\0\s[0]Figuring out what expressions to make for your ghost can be difficult.\w8 Something that you may find helpful is to find a \_a[https://emojipedia.org/twitter/]list of emoji\_a, and pick out expressions that you think might suit your character.\w8 Try writing a couple of tester dialogues with those emoji just to get a feel for it, and you might soon find you're thinking of other expressions you want to have.\w8 Keep track of which emoji you're using, and soon you'll have a list of expressions to make for your shell!"
-	"\0\s[0]If you're stuck on what kind of expressions and poses to draw for your shell, try flipping through a few other ghosts that you like the shells of, and study why they work so well.\w8 What kind of expressions do they have?\w8 Do they have multiple poses for different body language?\w8 What makes it so interesting to you?\w8 Really take time to look it over and think about it, and make notes!"
-	
-	"\0\s[0]A quick overview of the built in ways to address the user in this template, which are all decided through the SSP preferences:\w8\n%(username) %(they) %(them) %(their) %(theirs) %(themself)\w8\nAnd an example of the " + '%(p)' + " function: %(they) %(p('are','is')) working on a ghost"
-	
-	"\0\s[0]Make something cool, %(username)!\w8 You've got this!"
+	if testing
+	{
+		{
+			OnRandomClassmate
+			"\0\s[neutral]Today in my %(classes) class, %(rName) got caught %(mischief).\w9\n\n\s[eep]The teacher's scary when she's angry..."
+		}
+
+	}
+	else
+	{
+		// === Friday Dialogue ===
+
+		if weekday == 5
+		{
+			"\0\s[excited]It's Friday! Amanda and I are gonna watch a movie marathon!"
+		}
+		
+		// === Saturday/Weekend Dialogue ===
+		if weekday == 6
+		{
+			"\0\s[starry]Iiiit's time for Saturday morning cartoons!!!"
+		}
+
+		if weekday == 6 || weekday == 7
+		{
+			"\0\s[excited]Weekend!!"
+		}
+
+		
+		// === Holiday & Seasonal Dialogue ===
+		// if _today == "10/31" {}
+		// if _today == "12/25" {}
+		// if _today == "12/31" {}
+		// if _today == "1/1" {}
+		// if _today == "2/14" {}
+
+
+		// === Schoolwork Stuff ===
+		"\0\s[happy]I took chemistry this year for my science classes. Milovan's dad does some alchemy stuff sometimes, and I know they're not the same thing, but I thought it'd be cool to learn since there might be some similarities.\w7\s[excited]\n\nI wanna do magic alchemy one day!"
+
+		"\0\s[tired]Hrrmm... I still have a bunch of homework to do."
+		
+		"\0\s[neutral]A lot of my classmates complain about math subjects, but I like them. Once I know the formula, I just have to follow the steps. It's easier than book reports and stuff, I think."
+
+		// === Amanda & Classmates ===
+		// "\0\s[neutral]Today in my precalculus class, Ayako got caught passing notes to the girl next to her.\w9\n\n\s[eep]The teacher's scary when she's angry..."
+		{
+			OnRandomClassmate
+			"\0\s[neutral]Today in my %(classes) class, %(rName) got caught %(mischief).\w9\n\n\s[eep]The teacher's scary when she's angry..."
+		}
+
+		// === Evercotts & the Bookstore ===
+		"\0\s[starry]On my birthday or sometimes on the holidays, Milovan and his family let me pick out a free book from their bookstore."
+		
+		"\0\s[think]I guess Mr. Evercott has a few regulars who order alchemy commissions from him sometimes. Or potions or other things.\w9\s[think] I wanna order something one day, but it's expensive."
+		
+		"\0\s[starry]I stopped by the book store after school the other day. I got the next book in the Haunted Tales series! It's the third one, I'm still catching up.\n\nI like them a lot so far though. Very spooky."
+
+		// "\0\s[tired]I'm never sure what I should call Milovan's mom. She's not technically a \"Mrs.\" Evercott because her and Mr. Evercott aren't actually married. But if she's \"Miss\" or \"Ms.\" Evercott, that's confusing, because that's also her sister...\w8\w8\n\nI know none of them mind if I call them by name but that feels weird too..."
+
+		// === Misc ===
+		"\0\s[neutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
+		
+		// "\0\s[unamused]It weirds me out whenever someone calls me by my full name.\n\n\"Beatrice\" just sounds too... \f[bold,true]old lady.\f[bold,default]\w8\w8\n\n\s[eep]Uh. No offense to old ladies, though."
+	//	"User info from SSP preferences: %(username) %(they) %(them) %(their) %(theirs) %(themself)"
+	}
 }
