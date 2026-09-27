@@ -1,6 +1,6 @@
 ﻿# README
 
-Made for the Digital Pet Jam - https://itch.io/jam/digital-pet-jam
+"Made for the Digital Pet Jam - https://itch.io/jam/digital-pet-jam
 
 It's Beeeeee!!
 
@@ -13,4 +13,4 @@ To-Do:
 - Hotkeys
 
 Created by Mai Starberries
-My carrd.
+My carrd. https://maistarberries.carrd.co/
