@@ -1,23 +1,18 @@
 OnFirstBoot
 {
-	//If you add variables, make sure to initialize them here!
-	//Note - I haven't added anything about username or pronouns here because it's all handled by the SSP prefs
+	// Initialize variables
 	stroke = 0
 	LastTalk = ""
-	
-	"\1\s[10]\0\s[0]Hello, and welcome to the Simplicity Template, %(username).\w8 As the name implies, this template is very simple.\w8 You will notice there is not much here.\w8 That's on purpose!\w8 This template's primary goal is to make ghost creation less intimidating.\w8 You really need almost nothing to make a ghost;\w4 a basic shell with some interesting randomtalk can be an incredible and fun experience.\w8 So all those boring functions to do with email checking and such?\w8 Not here, unless you decide you want to add them.\w8 Don't let tedious functions tire you out before you can finish your ghost!\w8 Make something simple and fun, or start small and expand upon it later!\w8 Embrace the freedom of simplicity!"
+
+	"\0\s[gaming]...\_w[1000] \0\s[gamingLook]...\_w[1000]\c\0\s[panic]NEW PERSON!\_w[800]\0\s[eep]\n\nUm... Hi.\_w[800]\cMy name's Bee. I'm a rabbit terran, I'm 17 years old and I use she/they pronouns, and uh... My birthday is on June 12th? Um. It's nice to meet you.\n\nShould I call you %(username)?\_w[800]\n\n\s[think]Oh, right - if you need to set your name and other things in the baseware, you can right-click me and look under Options > Preferences > General.\_w[600]\n\n\s[proud]\w3\f[height,10]The author said I'm allowed to break the fourth wall a little bit."
 }
 
 OnInitialize
 {
-	//If you want some variables to reset on boot, put them here. This event will happen even if you add other events like OnGhostChanged
-	//OnInitialize is a NOTIFY event! That means it cannot return scripts. This event is only meant for things like variable changes. See this page on Ukadoc for more info: https://ukagakadreamteam.github.io/ukadoc/manual/spec_shiori3.html
-	
-	//If you add new variables in updates, I recommend initializing them like so:
+	testing = 0
 	//if !ISVAR("NewVariable"); NewVariable = 0
-	//This means that it will only set the new variable if the user doesn't already have it, so that their variables don't get overwritten
-	
-	if reference0 != "reload" //For things you want to reset EXCEPT when just reloading; a convenience for you the dev, basically
+
+	if reference0 != "reload" //Variables that don't reset on reload
 	{
 		LastTalk = ""
 	}
@@ -26,30 +21,56 @@ OnInitialize
 OnBoot
 {
 	_temp = SHIORI3FW.UserBirthday
-	_user_birthday = "%(_temp[1])/%(_temp[2])" //M/D, if you want it D/M you can switch it around
-	_today = "%(month)/%(day)" //Again, switch this around if using D/M
+	_user_birthday = "%(_temp[1])/%(_temp[2])"
+	_today = "%(month)/%(day)"
 	
 	"\1\s[10]\0\s[0]"
 	--
 	if _today == _user_birthday
 	{
-		"\0\s[0]It is %(username)'s birthday today.\w8 Happy birthday, %(username).\w8 Developer,\w4 you can add an interesting message here.\w8 It can be as long as you like.\w8 Or, you can remove it entirely."
+		"\0\s[happy]Hi, %(username). Happy birthday!"
 	}
-	elseif _today == "1/1" //You can add whatever cool dates you want with more elseifs here
+	elseif _today == "6/12"
+	{
+		"\0\s[holdStarry]%(username)! I got a new game for my birthday!"
+	}
+	elseif _today == "9/22"
+	{
+		"\0\s[smile]Hi, %(username)! It's Amanda's birthday today. We went out and watched a movie down at the theater with some of our other friends from school."
+	}
+	elseif _today == "11/3"
+	{
+		"\0\s[smile]Hello! It's my friend Milovan's birthday today."
+	}
+	elseif _today == "11/3"
+	{
+		"\0\s[smile]Today's Basil's birthday! He's my baby half-brother!"
+	}
+	elseif _today == "1/1"
 	{
 		"\0\s[0]It's new year's day.\w8 Happy %(year),\w4 %(username)."
 	}
+	elseif weekday == 5
+	{
+		"\0\s[happy]It's Friday!"
+	}
 	else //Normal boot
 	{
-		"\0\s[0]Hello %(username).\w8 Good to see you."
-		"\0\s[0]Hello.\w8 Ready to make something cool?"
+		"\0\s[smile]Hey, you're back."
+		"\0\s[smile]Welcome back."
+		"\0\s[starry]%(username)! The newest Masked Knight episode was so good! I wanna tell you everything but there's so many spoilers!"
+		"\0\s[holdStarry]I hatched my newest batch of Battle Beast eggs!\w_[800]\n\n...\_w[600]\n\nNone of them were chromas, but that's okay!"
 	}
 }
 
 OnClose
 {
-	"\0\s[0]Farewell."
-	"\0\s[0]Goodbye."
+	"\0\s[smile]Okay, bye!"
+	"\0\s[smile]See you later."
+	"\0\s[gaming]See you later."
+	"\0\s[starry]I'm gonna go watch the new Masked Knight episode!"
+	"\0\s[holdStarry]There's a Battle Beast hotspot down the street. I'm gonna go catch it!"
+	"\0\s[smile]Okay, I gotta get ready for school. Bye."
 	--
-	"\w8\w8\-" //This is what makes the ghost close (after a short pause), do not remove the \- , and MAKE SURE you don't use a \e before this point or it won't work
+	"\w8\w8\-" // Closes the ghost/SSP
 }
