@@ -4,11 +4,14 @@ OnFirstBoot
 	stroke = 0
 	LastTalk = ""
 
-	"\0\s[gaming]...\_w[1000] \0\s[gamingLook]...\_w[1000]\c\0\s[panic]NEW PERSON!\_w[800]\0\s[eep]\n\nUm... Hi.\_w[800]\cMy name's Bee. I'm a rabbit terran, I'm 17 years old and I use she/they pronouns, and uh... My birthday is on June 12th? Um. It's nice to meet you.\n\nShould I call you %(username)?\_w[800]\n\n\s[think]Oh, right - if you need to set your name and other things in the baseware, you can right-click me and look under Options > Preferences > General.\_w[600]\n\n\s[proud]\w3\f[height,16]The author said I'm allowed to break the fourth wall a little bit."
+	firstBootDialogue = "\0\s[gaming]...\_w[1000] \0\s[gamingLook]...\_w[1000]\c\0\s[panic]NEW PERSON!\_w[800]\0\s[eep]\n\nUm... Hi.\_w[800]\cMy name's Bee. I'm a rabbit terran, I'm 17 years old and I use she/they pronouns, and uh... My birthday is on June 12th? Um. It's nice to meet you.\n\nShould I call you %(username)?\_w[800]\n\n\s[think]Oh, right - if you need to set your name and other things in the baseware, you can right-click me and look under Options > Preferences > General.\_w[600]\n\n\s[proud]\w3\f[height,16]The author said I'm allowed to break the fourth wall a little bit."
+
+	CenterText(firstBootDialogue)
 }
 
 OnInitialize
 {
+	ComicBalloon = 0
 	testing = 0
 	//if !ISVAR("NewVariable"); NewVariable = 0
 

@@ -9,7 +9,12 @@ OnTranslate
 	}
 	
 	//If you want to add anything to OnTranslate, like text replacement, I would put it after this point, generally. Just make sure it's before the TOSTR(_talk)
-	
+
+	if ComicBalloon
+	{
+		// _talk = CenterText(_talk)
+		_talk = CenterText(_talk)
+	}
 	TOSTR(_talk)
 }
 
@@ -164,3 +169,17 @@ username
 {
 	SHIORI3FW.UserName
 }
+
+// --- CENTERED DIALOGUE FOR COMIC BALLOON ---
+
+OnNotifyBalloonInfo
+{
+	ComicBalloon = (reference0 == "Starberries Comic Balloon")
+}
+
+CenterText
+{
+	_talk = "\f[align,center]" + REPLACE(_argv[0], "\n", "\f[align,center]\n")
+	_talk
+}
+
