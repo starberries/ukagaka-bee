@@ -16,6 +16,8 @@ dic, mouse.dic
 dic, other.dic
 dic, word.dic
 
+// log,ayame.log
+
 msglang,english
 
 //------------------------------------------------------------------------------

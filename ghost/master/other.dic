@@ -2,21 +2,20 @@ OnTranslate
 {
 	_talk = reference0
 	
-	//This is what makes %(embedded_elements) work in script input
-	if reference1 == "" && reference2 == "" //If this is from the input box
-	{ //send input box : no event (ref2) , no special flag (ref1)
+	if reference1 == "" && reference2 == ""
+	{
 		_talk = EVAL('"' + REPLACE(_talk,'"','""') + '"')
 	}
 	
-	//If you want to add anything to OnTranslate, like text replacement, I would put it after this point, generally. Just make sure it's before the TOSTR(_talk)
-
 	if ComicBalloon
 	{
-		// _talk = CenterText(_talk)
 		_talk = CenterText(_talk)
+		_talk = ChooseBalloon(_talk) + _talk
 	}
+
 	TOSTR(_talk)
 }
+
 
 //This is just here so you can use anchors to link to websites if you want. You can link to websites with normal menu choice tags! If you do, a handy URL preview will show up in the balloon!
 OnAnchorSelect
@@ -44,17 +43,10 @@ OnWindowStateRestore
 	OnSurfaceRestore
 }
 
-//• Open your ghost's repo online
-//• navigate to the ghost's folder (the top level one, with install.txt, readme.txt, etc)
-//• Click on install.txt, or another text file on that level
-//• Once on that page, click the "raw" button. You should see the url now starts with raw.githubusercontent
-//• Copy that url exactly as is, but *leave off the "install.txt" or whatever file name at the end.*
-//Tada! That's your url! Make sure you test it! The dev palette and script/network log can help with that
 On_homeurl
 {
 	"https://raw.githubusercontent.com/starberries/ukagaka-bee/refs/heads/main/"
 }
-
 
 //—————————————————————————————— Right click menu links ——————————————————————————————
 
@@ -85,7 +77,6 @@ On_sakura.portalsites
 	FormatLinks(portalsites_sakura)
 }
 
-//These are the websites linked in the second option of the sakura's right click menu. Same as above
 portalsites_sakura : array
 {
 	"On Starlit Tides";	"https://on-starlit-tides.thecomicseries.com/"
@@ -96,7 +87,6 @@ On_kero.recommendsites
 	FormatLinks(recommendsites_kero)
 }
 
-//These are the websites linked in the first option of the kero's right click menu. Same as above
 recommendsites_kero : array
 {
 	"These labels can be anything you want";	"https://link.example.com/link/to/whatever/here/once/more/"
@@ -148,23 +138,6 @@ p
 	else; _argv[1] //he is/she is
 }
 
-/*
-
-An example of the above setup:
-"%(they) %(p('were','was')) looking for that earlier, I'll ask if %(they)'%(p('ve','s')) found it."
-
-If using they, the %(p) functions will return the first word specified, resulting in:
-"they were looking for that earlier, I'll ask if they've found it."
-
-If not using they, for example if using she, it will return the second specified word instead, resulting in:
-"she was looking for that earlier, I'll ask if she's found it."
-
-With this function, you can quickly customize words that need to change based on whether it should be singular or plural. Just remember; the %(p) function is set up so that the first word you specify matches with the 'they' labels used on the pronoun functions. You can always switch that around if you like, too.
-
-*/
-
-//This just makes %(username) match with the username determined by the SSP prefs, rather than having to use the %username environment variable which is *not* the same and which you can't do things like TOUPPER to.
-//If you want to have the user be able to set a nickname or something, you may want to change username to a variable instead and get rid of this!
 username
 {
 	SHIORI3FW.UserName
@@ -179,7 +152,80 @@ OnNotifyBalloonInfo
 
 CenterText
 {
-	_talk = "\f[align,center]" + REPLACE(_argv[0], "\n", "\f[align,center]\n")
+	_align = "\f[align,center]"
+	_talk = _align + REPLACE(_argv[0], "\n", _align + "\n")
 	_talk
 }
 
+ChooseBalloon
+{
+	// Scuffed as hell way of "centering" the text vertically but it works for now
+	_text = _argv[0]
+	_clean = RemoveSakuraScript(_text)
+	_breaks = CountSubstring(_text, "\n")
+	_len = STRLEN(_clean)
+	_lines = CEIL(_len / 28) + _breaks + 1
+	_buffer = ""
+
+	if _lines >= 10 // 10, 11
+	{
+		if _lines == 10; _buffer = "\n"
+		if _lines == 11; _buffer = "\n[half]"
+		"\b[2]" + _buffer
+	}
+	elseif _lines >= 8 // 8, 9
+	{
+		if _lines == 8; buffer = "\n\n[half]"
+		"\b[4]" + _buffer
+	}
+	elseif _lines >= 6 // 6, 7
+	{
+		if _lines == 6
+		{
+			_buffer = "\n[half]"
+		}
+		"\b[6]" + _buffer
+	}
+	elseif _lines <= 3 // 1,2,3
+	{
+		if _lines == 1; buffer = "\n\n[half]"
+		if _lines == 2; buffer = "\n"
+		"\b[8]" + _buffer
+	}
+	else // 4, 5
+	{
+		if _lines == 4; _buffer = "\n"
+		if _lines == 5; _buffer = "\n[half]"
+		"\b[0]" + _buffer
+	}
+}
+
+CountSubstring
+{
+		_text = _argv[0]
+		_search = _argv[1]
+		_count = 0
+		_pos = 0
+
+		while _pos >= 0
+		{
+			_pos = STRSTR(_text, _search, _pos)
+			if _pos < 0
+			{
+				break
+			}
+			_count++
+			_pos += STRLEN(_search)
+
+		}
+
+		_count
+}
+
+// Remove Sakura Script commands.
+RemoveSakuraScript
+{
+    _text = RE_REPLACE(_argv[0], '\\_{0,2}[a-zA-Z0-9*!&-](\d|\[("([^"]|\\")+?"|([^\]]|\\\])+?)+?\])?', '')
+    _text = REPLACE(_text, '\\', '\')
+    _text
+}
