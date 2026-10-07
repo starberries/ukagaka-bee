@@ -61,6 +61,27 @@ RandomTalk : nonoverlap_pool
 			"\0\s[smile]It's Flower Day!\s[think] These days a lot of people give candy instead of flowers, though."
 		}
 
+		// === FOOD ===
+		"\s[think]Do you think spirits have a favorite snack? Hikari likes peach buns, so other spirits must have preferences too..."
+
+		"\s[neutral]Amanda and I tried some new fruit snacks from the convenience store today.\w8\n\n[half]\s[unamused]They were weird. I don't really like artificial fruit flavors anyway, but Amanda didn't like them either."
+
+		if time > 0 && time < 4 {
+			"\s[gaming]I think I want %(breakfastfood) for breakfast tomorrow..."
+		}
+		if time > 4 && time < 11 {
+			"\s[gaming]I think I want %(breakfastfood) for breakfast..."
+		}
+		if time > 11 && time < 15 {
+			"\s[gaming]I think I want %(lunchfood) for lunch..."
+		}
+		if time > 15 && time < 20 {
+			"\s[gaming]I think I want %(dinnerfood) for dinner..."
+		}
+		
+		"\s[holdNeutral]I was thinking I should practice more cooking sometime.\w8\n\n[half]... \s[holdEep]What if I burn my fur?"
+
+		"\s[excited]My mom brought home some strawberry shortcake from work today."
 
 		// === Schoolwork Stuff ===
 		"\0\s[happy]I took chemistry this year for my science classes. Milovan's dad does some alchemy stuff sometimes, and I know they're not the same thing, but I thought it'd be cool to learn since there might be some similarities.\w7\s[excited]\n\n[half]I wanna do cool alchemy magic one day!"

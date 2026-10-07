@@ -1,3 +1,45 @@
+food
+{
+	"pizza"
+	"pesto pasta"
+	"tofu parmigiana"
+	"onion soup"
+	"tomato soup"
+}
+
+snack
+{
+
+}
+
+breakfastfood
+{
+	"pancakes"
+	"waffles"
+	"cereal"
+	"zucchini bread"
+	"scrambled eggs"
+	"eggs and rice"
+	"an omelette"
+	"a bagel with... jam"
+	"a bagel with... peanut butter and jam"
+}
+
+lunchfood
+{
+	food
+	"a grilled cheese"
+	"a pesto grilled cheese"
+	"tofu banh mi"
+	"nachos"
+}
+
+dinnerfood
+{
+	food
+	"a veggie burger"
+}
+
 classes
 {
 	"precalculus"
