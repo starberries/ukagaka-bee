@@ -1,19 +1,27 @@
 ﻿# README
 
-Made for the [Digital Pet Jam](https://itch.io/jam/digital-pet-jam)
+Version: 0.1.0 (Alpha)
 
-It's Beeeeee!!
+SHIORI: YAYA
+Baseware: SSP
+
+_Made for the [Digital Pet Jam](https://itch.io/jam/digital-pet-jam)_
+
+## It's Beeeeee!!
 
 Bee of [On Starlit Tides](https://on-starlit-tides.thecomicseries.com/) is a high school junior attending Blossom High in the cozy town of Port Blossom.
 
 Bee will hang out with you and talk about their day, interests, friends, or whatever else she thinks of. She likes chroma-huntiny in her favorite game series Battle Beasts.
 
-## To-Do
+Bee has code intended to be used with my [Comic Balloon](https://github.com/starberries/ukagaka-balloon-comic), but her dialogue should be fine with other balloons as well!
+
+### To-Do
 
 - Features
-- Hotkeys
+- Collisions
+- Most other things
 
-## Author + Credits
+### Author + Credits
 
 Created by Mai Starberries
 [My carrd](https://maistarberries.carrd.co/)
