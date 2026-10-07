@@ -570,13 +570,15 @@ surface.append105,102,103,202,203 {
 	
 	animation56.interval,never
 	animation56.pattern0,overlay,53,0,0,0
-	animation56.pattern1,overlay,52,200,0,0
-	animation56.pattern2,overlay,-1,200,0,0
-
+	animation56.pattern1,overlay,51,200,0,0
+	animation56.pattern2,overlay,52,200,0,0
+	animation56.pattern3,overlay,-1,200,0,0
+	
 	animation57.interval,never
 	animation57.pattern0,overlay,52,0,0,0
-	animation57.pattern1,overlay,53,200,0,0
-	animation57.pattern2,overlay,-1,200,0,0
+	animation57.pattern1,overlay,51,200,0,0
+	animation57.pattern2,overlay,53,200,0,0
+	animation57.pattern3,overlay,-1,200,0,0
 	
 	animation58.interval,never
 	animation58.pattern0,overlay,53,0,0,0
