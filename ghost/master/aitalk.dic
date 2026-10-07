@@ -28,10 +28,11 @@ RandomTalk : nonoverlap_pool
 		if weekday == 5
 		{
 			"\0\s[excited]It's Friday! Amanda and I are gonna watch a movie marathon!"
+			"\0\s[starry]I'm gonna stay up late tonight and read more of my new book!"
 		}
 		
 		// === Saturday/Weekend Dialogue ===
-		if weekday == 6
+		if weekday == 6 && hour <=11
 		{
 			"\0\s[starry]Iiiit's time for Saturday morning cartoons!!!"
 		}
@@ -43,11 +44,22 @@ RandomTalk : nonoverlap_pool
 
 		
 		// === Holiday & Seasonal Dialogue ===
-		// if _today == "10/31" {}
-		// if _today == "12/25" {}
-		// if _today == "12/31" {}
-		// if _today == "1/1" {}
-		// if _today == "2/14" {}
+		if _today == "10/31" {
+			"\0\s[playful]It's the spooky day!"
+		}
+
+		if _today == "12/25" {
+			"\0\s[holdHappySmile]Happy winter holidays!"
+		}
+		if _today == "12/31" {
+			"\0\s[holdStarry]It's almost the new year! Are you doing anything to celebrate?"
+		}
+		if _today == "1/1" {
+			"\0\s[excited]Happy New Year!"
+		}
+		if _today == "2/14" {
+			"\0\s[smile]It's Flower Day!\s[think] These days a lot of people give candy instead of flowers, though."
+		}
 
 
 		// === Schoolwork Stuff ===
@@ -58,7 +70,6 @@ RandomTalk : nonoverlap_pool
 		"\0\s[neutral]A lot of my classmates complain about math subjects, but I like them. Once I know the formula, I just have to follow the steps. It's easier than book reports and stuff, I think."
 
 		// === Amanda & Classmates ===
-		// "\0\s[neutral]Today in my precalculus class, Ayako got caught passing notes to the girl next to her.\w9\n\n\s[eep]The teacher's scary when she's angry..."
 		{
 			OnRandomClassmate
 			"\0\s[neutral]Today in my %(classes) class, %(rName) got caught %(mischief).\w9\n\n\s[eep]The teacher's scary when she's angry..."
@@ -69,14 +80,13 @@ RandomTalk : nonoverlap_pool
 		
 		"\0\s[think]I guess Mr. Evercott has a few regulars who order alchemy commissions from him sometimes. Or potions or other things.\w9\s[think] I wanna order something one day, but it's expensive."
 		
-		"\0\s[starry]I stopped by the book store after school the other day. I got the next book in the Haunted Tales series! It's the third one, I'm still catching up.\n\nI like them a lot so far though. Very spooky."
+		"\0\s[holdStarry]I stopped by the book store after school the other day. I got the next book in the Haunted Tales series! It's the third one, I'm still catching up.\n\nI like them a lot so far though. Very spooky."
 
-		// "\0\s[tired]I'm never sure what I should call Milovan's mom. She's not technically a \"Mrs.\" Evercott because her and Mr. Evercott aren't actually married. But if she's \"Miss\" or \"Ms.\" Evercott, that's confusing, because that's also her sister...\w8\w8\n\nI know none of them mind if I call them by name but that feels weird too..."
+		"\0\s[tired]I'm never sure what I should call Milovan's mom. She's not technically a %CHR(34)Mrs.%CHR(34) Evercott because her and Mr. Evercott aren't actually married. But if she's %CHR(34)Miss%CHR(34) or %CHR(34)Ms.%CHR(34) Evercott, that's confusing, because that's also her sister...\w8\w8\n\nI know none of them mind if I call them by name but that feels weird too..."
 
 		// === Misc ===
-		"\0\s[neutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
+		"\0\s[holdNeutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
 		
-		// "\0\s[unamused]It weirds me out whenever someone calls me by my full name.\n\n\"Beatrice\" just sounds too... \f[bold,true]old lady.\f[bold,default]\w8\w8\n\n\s[eep]Uh. No offense to old ladies, though."
-	//	"User info from SSP preferences: %(username) %(they) %(them) %(their) %(theirs) %(themself)"
+		"\0\s[holdUnamused]It weirds me out whenever someone calls me by my full name.\n\n%CHR(34)Beatrice%CHR(34) just sounds too... \f[bold,true]old lady.\f[bold,default]\w8\w8\n\n\s[eep]Uh. No offense to old ladies, though."
 	}
 }

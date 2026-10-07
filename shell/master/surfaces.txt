@@ -430,6 +430,26 @@ surface.append121,221
 	element5,overlay,bee_tuft_up.png,0,0
 }
 
+//===== PLAYFUL =============
+surface122
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface222
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append122,222
+{
+	element1,overlay,bee_mouth_catsmile.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_starry.png,0,0
+	element4,overlay,bee_eyebrows_fierce.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
 //===== GAMING NEUTRAL =============
 surface300
 {
@@ -610,6 +630,7 @@ sakura.surface.alias
 	excited,[119]
 	eep,[120]
 	panic,[121]
+	playful,[122]
 	holdDefault,[200]
 	holdNeutral,[201]
 	holdSmile,[202]
@@ -631,6 +652,7 @@ sakura.surface.alias
 	holdExcited,[219]
 	holdEep,[220]
 	holdPanic,[221]
+	holdPlayful,[222]
 	gaming,[300]
 	gamingLook,[301]
 }
