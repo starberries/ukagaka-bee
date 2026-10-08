@@ -1,13 +1,13 @@
 SakuraMenuGreetings : nonoverlap
 {
 	"Hello."
-	"How can I help you?"
+	"What's up?"
 }
 
 //Because there is an all modifier here, you don't need to write -- between menu options
 OnSakuraMenu : all
 {
-	"\0\s[0]\b[2]\![set,autoscroll,disable]"
+	"\0\s[0]\![set,autoscroll,disable]"
 	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
 	
 	"\n\n\_q"
@@ -22,11 +22,14 @@ OnSakuraMenu : all
 	"\n\n"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
-
-	if testing {
-		"\![*]\q[Disable debug mode,OnToggleDebug]\n\n"
-	} else {
-		"\![*]\q[Switch to debug mode,OnToggleDebug]\n\n"
+	
+	if dev
+	{
+		if testing {
+			"\![*]\q[Disable debug mode,OnToggleDebug]\n\n"
+		} else {
+			"\![*]\q[Switch to debug mode,OnToggleDebug]\n\n"
+		}
 	}
 	
 	"\![*]\q[Cancel,blank]"	
