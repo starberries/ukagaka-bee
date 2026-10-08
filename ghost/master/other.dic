@@ -69,7 +69,9 @@ On_sakura.recommendsites
 
 recommendsites_sakura : array
 {
-	"On Starlit Tides";	"https://on-starlit-tides.thecomicseries.com/"
+	"ComicFury";	"https://comicfury.com/"
+	"NamiComi"; "https://namicomi.com/en"
+	"TopWebcomics"; "https://topwebcomics.com/?home=3"
 }
 
 On_sakura.portalsites 
