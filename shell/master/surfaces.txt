@@ -521,9 +521,10 @@ surface1 {
 // Collisions for neutral pose
 surface.append0,100-199 {
 	collision0,115,60,235,100,head
-	collision1,110,100,215,180,face
+	// collision1,110,100,215,180,face
 	collision2,60,150,120,360,earL
 	collision3,215,100,320,380,earR
+	collision4,140,160,160,180,nose
 }
 
 //Neutral Blink Animation
@@ -676,7 +677,7 @@ sakura.cursor
 	mouseup0,Head,system:hand 
 	mousedown0,Head,system:finger 
 	mouseup1,Face,system:hand 
-	mousedown1,Face,system:finger
+	mousedown1,Nose,system:finger
 	mouseup2,EarL,system:hand 
 	mouseup3,EarR,system:hand 
 }
@@ -688,10 +689,10 @@ sakura.cursor
 
 //--Tooltips------------------
 
-sakura.tooltips 
-{ 
-	Head,"This is Bee's head."
-	Face,"This is Bee's face."
-	EarL,"This is Bee's ear."
-	EarR,"This is Bee's ear."
-}
+// sakura.tooltips 
+// { 
+// 	Head,"This is Bee's head."
+// 	nose,"This is Bee's nose."
+// 	EarL,"This is Bee's ear."
+// 	EarR,"This is Bee's ear."
+// }
