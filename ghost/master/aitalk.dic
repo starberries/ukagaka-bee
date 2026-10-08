@@ -108,8 +108,12 @@ RandomTalk : nonoverlap_pool
 		"\0\s[tired]I'm never sure what I should call Milovan's mom. She's not technically a %CHR(34)Mrs.%CHR(34) Evercott because her and Mr. Evercott aren't actually married. But if she's %CHR(34)Miss%CHR(34) or %CHR(34)Ms.%CHR(34) Evercott, that's confusing, because that's also her sister...\w8\w8\n\nI know none of them mind if I call them by name but that feels weird too..."
 
 		// === Misc ===
-		"\0\s[holdNeutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
-		
-		"\0\s[holdUnamused]It weirds me out whenever someone calls me by my full name.\n\n%CHR(34)Beatrice%CHR(34) just sounds too... \f[bold,true]old lady.\f[bold,default]\w8\w8\n\n\s[eep]Uh. No offense to old ladies, though."
+		if friendship >= 10 {
+			"\0\s[holdNeutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
+		}
+
+		if friendship >= 50 {
+			"\0\s[holdUnamused]It weirds me out whenever someone calls me by my full name.\n\n%CHR(34)Beatrice%CHR(34) just sounds too... \f[bold,true]old lady.\f[bold,default]\w8\w8\n\n\s[eep]Uh. No offense to old ladies, though."
+		}
 	}
 }

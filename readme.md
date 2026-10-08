@@ -1,6 +1,6 @@
 ﻿# README
 
-Version: 0.2.1 (Alpha)
+Version: 0.3.1 (Alpha)
 
 SHIORI: YAYA
 Baseware: SSP
@@ -15,15 +15,15 @@ Bee will hang out with you and talk about their day, interests, friends, or what
 
 Bee has code intended to be used with my [Comic Balloon](https://github.com/starberries/ukagaka-balloon-comic), but her dialogue should be fine with other balloons as well!
 
+### Current Features
+
+- Random dialogue
+- Collisions (a boopable nose!)
+- A hidden friendship value that increases over time (Bee warms up to people pretty quick, but more dialogue will unlock over time!)
+
 #### How to Install Ghosts/SSP
 
 If you've never installed ukagaka/ghosts before, they're used through a program called a baseware. Most people, myself included, use SSP. You can find a quick guide on [installing SSP and ghosts here!](https://ukagakadreamteam.com/wiki/guide/beginner_guide#how_to_install_ghosts)
-
-### To-Do
-
-- Features
-- Collisions
-- Most other things
 
 ### Author + Credits
 

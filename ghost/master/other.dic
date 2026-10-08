@@ -145,7 +145,14 @@ username
 	SHIORI3FW.UserName
 }
 
-// --- CENTERED DIALOGUE FOR COMIC BALLOON ---
+
+//————————————————————————————— Custom Functions ———————————————————————————————————
+OnHourTimeSignal
+{
+	friendship++
+}
+
+//———————————————————— Centered Dialogue for Comic Balloon —————————————————————————
 
 OnNotifyBalloonInfo
 {

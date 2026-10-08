@@ -13,7 +13,9 @@ OnInitialize
 {
 	ComicBalloon = 0
 	testing = 0
+
 	if !ISVAR("dev"); dev = 0
+	if !ISVAR("friendship"); friendship = 0
 
 	if reference0 != "reload" //Variables that don't reset on reload
 	{
@@ -61,8 +63,10 @@ OnBoot
 	{
 		"\0\s[smile]Hey, you're back."
 		"\0\s[smile]Welcome back."
-		"\0\s[starry]%(username)! The newest Masked Knight episode was so good! I wanna tell you everything but there's so many spoilers!"
-		"\0\s[holdStarry]I hatched my newest batch of Battle Beast eggs!\w_[800]\n\n...\_w[600]\n\nNone of them were chromas, but that's okay!"
+		if friendship > 0 {
+			"\0\s[starry]%(username)! The newest Masked Knight episode was so good! I wanna tell you everything but there's so many spoilers!"
+			"\0\s[holdStarry]I hatched my newest batch of Battle Beast eggs!\w_[800]\n\n...\_w[600]\n\nNone of them were chromas, but that's okay!"
+		}
 	}
 }
 
