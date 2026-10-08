@@ -33,7 +33,7 @@ OnBoot
 	--
 	if _today == _user_birthday
 	{
-		"\0\s[happy]Hi, %(username). Happy birthday!"
+		"\0\s[smile]Oh, %(user)! It's your birthday today, right? Happy birthday!"
 	}
 	elseif _today == "6/12"
 	{
@@ -54,6 +54,14 @@ OnBoot
 	elseif _today == "10/31"
 	{
 		"\0\s[excited]Candy season is upon us!"
+	}
+	elseif _today == "12/24" || "12/25" //Expand the dates on this later
+	{
+		"\0\s[tired]It's so cold out...\w8\n\n[half]\s[smile]The snow is pretty, though. Happy holidays!"
+	}
+	elseif _today == "12/31"
+	{
+		"\0\s[holdStarry]It's almost the new year! Last year, my step-dad let me try champagne.\w8\w8\n\n[half]\s[holdEep]I didn't like it."
 	}
 	elseif _today == "1/1"
 	{
