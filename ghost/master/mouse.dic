@@ -35,17 +35,20 @@ OnMouseMove.Sakura
 {
 	if reference4 == "head"
 	{
-		"\0\s[0]Petting??"
+		"\0\s[proud]That's actually pretty nice."
 	} 
-
-	if reference4 == "face"
-	{
-		"\0\s[0]N-no touching!!"
-	}
 
 	if reference4 == "earL" || reference4 == "earR"
 	{
-		"\0\s[0]Ears!"
+		"\0\s[proud]Aren't my ears soft?"
+	}
+}
+
+OnMouseClick
+{
+	if reference3 == 0 && reference4 == "nose"
+	{
+		"\0\s[surprise]Boop?!"
 	}
 }
 
