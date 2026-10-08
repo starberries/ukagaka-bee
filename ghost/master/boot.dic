@@ -51,6 +51,10 @@ OnBoot
 	{
 		"\0\s[smile]Today's Basil's birthday! He's my baby half-brother!"
 	}
+	elseif _today == "10/31"
+	{
+		"\0\s[excited]Candy season is upon us!"
+	}
 	elseif _today == "1/1"
 	{
 		"\0\s[happy]It's a new year!\w8 Happy %(year),\w4 %(username)."
