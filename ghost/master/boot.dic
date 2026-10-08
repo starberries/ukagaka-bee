@@ -45,13 +45,13 @@ OnBoot
 	{
 		"\0\s[smile]Hello! It's my friend Milovan's birthday today."
 	}
-	elseif _today == "11/3"
+	elseif _today == "12/21"
 	{
 		"\0\s[smile]Today's Basil's birthday! He's my baby half-brother!"
 	}
 	elseif _today == "1/1"
 	{
-		"\0\s[0]It's new year's day.\w8 Happy %(year),\w4 %(username)."
+		"\0\s[happy]It's a new year!\w8 Happy %(year),\w4 %(username)."
 	}
 	elseif weekday == 5
 	{
