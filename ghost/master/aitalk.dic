@@ -39,7 +39,8 @@ RandomTalk : nonoverlap_pool
 
 		if weekday == 6 || weekday == 7
 		{
-			"\0\s[excited]Weekend!!"
+			"\0\s[excited]It's the weekend!!"
+			"\0\s[playful]No school means more times for games and... stuff!"
 		}
 
 		
@@ -107,7 +108,16 @@ RandomTalk : nonoverlap_pool
 
 		"\0\s[tired]I'm never sure what I should call Milovan's mom. She's not technically a %CHR(34)Mrs.%CHR(34) Evercott because her and Mr. Evercott aren't actually married. But if she's %CHR(34)Miss%CHR(34) or %CHR(34)Ms.%CHR(34) Evercott, that's confusing, because that's also her sister...\w8\w8\n\nI know none of them mind if I call them by name but that feels weird too..."
 
+		// === Trivia ===
+		"\0\s[surprise]Did you know butterflies don't just drink nectar from flowers? They also drink blood!\w8\w8\n\n[half]\s[wonder]I wonder if there are any butterfly vampires..."
+
 		// === Misc ===
+		"\0\s[amazed]Today I went for a walk up to Hikari's shrine and I saw some of the prettiest flowers blooming! The spirits must be getting a lot of work done!"
+
+		"\0\s[smile]I think I'm gonna go for a walk to the park later day."
+
+		"\0\s[gaming]Hmm hm hmm~♫"
+
 		if friendship >= 10 {
 			"\0\s[holdNeutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
 		}
