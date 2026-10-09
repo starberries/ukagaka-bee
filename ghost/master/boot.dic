@@ -55,7 +55,7 @@ OnBoot
 	{
 		"\0\s[excited]Candy season is upon us!"
 	}
-	elseif _today == "12/24" || "12/25" //Expand the dates on this later
+	elseif _today == "12/24" || _today == "12/25" //Expand the dates on this later
 	{
 		"\0\s[tired]It's so cold out...\w8\n\n[half]\s[smile]The snow is pretty, though. Happy holidays!"
 	}
