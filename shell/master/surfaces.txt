@@ -162,10 +162,10 @@ surface208
 
 surface.append108,208
 {
-	element1,overlay,bee_mouth_pout.png,0,0
+	element1,overlay,bee_mouth_frown.png,0,0
 	element2,overlay,bee_nose_normal.png,0,0
 	element3,overlay,bee_eyes_narrow.png,0,0
-	element4,overlay,bee_eyebrows_fierce.png,0,0
+	element4,overlay,bee_eyebrows_squished.png,0,0
 	element5,overlay,bee_tuft_up.png,0,0
 }
 
@@ -242,10 +242,10 @@ surface212
 
 surface.append112,212
 {
-	element1,overlay,bee_mouth_smile.png,0,0
+	element1,overlay,bee_mouth_frown.png,0,0
 	element2,overlay,bee_nose_normal.png,0,0
-	element3,overlay,bee_eyes_squeeze.png,0,0
-	element4,overlay,bee_eyebrows_neutral.png,0,0
+	element3,overlay,bee_eyes_narrow.png,0,0
+	element4,overlay,bee_eyebrows_fierce.png,0,0
 	element5,overlay,bee_tuft_up.png,0,0
 }
 
@@ -363,10 +363,10 @@ surface218
 
 surface.append118,218
 {
-	element1,overlay,bee_mouth_wide.png,0,0
+	element1,overlay,bee_mouth_squiggle.png,0,0
 	element2,overlay,bee_nose_normal.png,0,0
 	element3,overlay,bee_eyes_squeeze.png,0,0
-	element4,overlay,bee_eyebrows_neutral.png,0,0
+	element4,overlay,bee_eyebrows_furrow.png,0,0
 	element5,overlay,bee_tuft_up.png,0,0
 }
 
@@ -447,6 +447,82 @@ surface.append122,222
 	element2,overlay,bee_nose_normal.png,0,0
 	element3,overlay,bee_eyes_starry.png,0,0
 	element4,overlay,bee_eyebrows_fierce.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== AMAZED =============
+surface123
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface223
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append123,223
+{
+	element1,overlay,bee_mouth_open.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_starry.png,0,0
+	element4,overlay,bee_eyebrows_up.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+//===== AMAZED ALT =============
+surface124
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface224
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append124,224
+{
+	element1,overlay,bee_mouth_mneutral.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_starry.png,0,0
+	element4,overlay,bee_eyebrows_up.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== FRUSTRATED =============
+surface125
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+
+surface225
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append125,225
+{
+	element1,overlay,bee_mouth_squiggle.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_unamused.png,0,0
+	element4,overlay,bee_eyebrows_fierce.png,0,0
+	element5,overlay,bee_tuft_up.png,0,0
+}
+
+//===== THINK =============
+surface126
+{
+	element0,overlay,bee_pose_neutral.png,0,0
+}
+surface226
+{
+	element0,overlay,bee_pose_holding_game.png,0,0
+}
+
+surface.append126,226
+{
+	element1,overlay,bee_mouth_frown.png,0,0
+	element2,overlay,bee_nose_normal.png,0,0
+	element3,overlay,bee_eyes_think.png,0,0
+	element4,overlay,bee_eyebrows_neutral.png,0,0
 	element5,overlay,bee_tuft_up.png,0,0
 }
 
@@ -541,7 +617,7 @@ surface.append0,101,102,200,201,202 {
 }
 
 // Neutral Talk Animation
-surface.append0,101,201 {
+surface.append0,101,107-110,201,207-210 {
 	animation50.interval,talk,4
 	animation50.pattern0,alternativestart,(51,52,53,54)
 	
@@ -634,6 +710,11 @@ sakura.surface.alias
 	eep,[120]
 	panic,[121]
 	playful,[122]
+	amazed,[123]
+	amazedAlt,[124]
+	frustrated,[125]
+	wonder,[126]
+
 	holdDefault,[200]
 	holdNeutral,[201]
 	holdSmile,[202]
@@ -656,6 +737,11 @@ sakura.surface.alias
 	holdEep,[220]
 	holdPanic,[221]
 	holdPlayful,[222]
+	holdAmazed,[223]
+	holdAmazedAlt,[224]
+	holdFrustrated,[225]
+	holdWonder,[226]
+
 	gaming,[300]
 	gamingLook,[301]
 }
