@@ -6,10 +6,23 @@ OnAiTalk
 	}
 	else
 	{
-		LastTalk = RandomTalk
+		LastTalk = GetRandomTalk
 	}
 	LastTalk
 }
+
+GetRandomTalk {
+	_randomPool = IARRAY
+	_randomPool ,= RandomTalk
+	if CheckFlag("dev"); _randomPool ,= TestTalk
+
+	_randomPool
+}
+
+TestTalk : nonoverlap_pool
+{
+}
+
 
 RandomTalk : nonoverlap_pool
 {
@@ -116,7 +129,7 @@ RandomTalk : nonoverlap_pool
 
 		"\0\s[smile]I think I'm gonna go for a walk to the park later day."
 
-		"\0\s[gaming]Hmm hm hmm~♫"
+		"\0\s[gaming]Hmm hm hmm~🎵"
 
 		if friendship >= 10 {
 			"\0\s[holdNeutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
