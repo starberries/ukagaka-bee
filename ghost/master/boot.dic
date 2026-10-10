@@ -14,7 +14,9 @@ OnInitialize
 	ComicBalloon = 0
 	testing = 0
 
-	if !ISVAR("dev"); dev = 0
+	if !ISVAR("flags"); flags = IARRAY
+	// if !CheckFlag("dev"); flags ,= "dev"
+
 	if !ISVAR("friendship"); friendship = 0
 
 	if reference0 != "reload" //Variables that don't reset on reload

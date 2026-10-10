@@ -152,6 +152,27 @@ OnHourTimeSignal
 	friendship++
 }
 
+//Original written by Zichqec https://ukagaka.zichqec.com/
+CheckFlag
+{
+	if ASEARCH(_argv[0],flags) != -1; 1
+	else; 0
+}
+
+RemoveFlag
+{
+	_elements = ASEARCHEX(_argv[0],flags)
+	if ARRAYSIZE(_elements) > 0
+	{
+		for _i = ARRAYSIZE(_elements) - 1; _i >= 0; _i--
+		{
+			_current = _elements[_i]
+			MiscFlags[_current] = IARRAY
+		}
+	}
+}
+
+
 //———————————————————— Centered Dialogue for Comic Balloon —————————————————————————
 
 OnNotifyBalloonInfo
