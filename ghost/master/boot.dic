@@ -16,6 +16,7 @@ OnInitialize
 
 	if !ISVAR("flags"); flags = IARRAY
 	// if !CheckFlag("dev"); flags ,= "dev"
+	// if CheckFlag("dev"); RemoveFlag("dev")
 
 	if !ISVAR("friendship"); friendship = 0
 
@@ -75,9 +76,13 @@ OnBoot
 	}
 	else //Normal boot
 	{
+		if GetTimeSlot =='morning'; "Good morning."
+
 		"\0\s[smile]Hey, you're back."
 		"\0\s[smile]Welcome back."
-		if friendship > 0 {
+
+		// Battle Beast shiny-hunt
+		if friendship >= 1 {
 			"\0\s[starry]%(username)! The newest Masked Knight episode was so good! I wanna tell you everything but there's so many spoilers!"
 			if RAND == 0 {
 				"\0\s[holdStarry]I hatched my newest batch of Battle Beast eggs!\w_[800]\n\n...\_w[600]\n\nOne of them was a chroma!"

@@ -1,0 +1,98 @@
+// === Get General Time ===
+GetTime
+{
+	_time = hour * 100 + minute
+	_time
+}
+
+GetTimeSlot
+{
+	_time = GetTime
+	if _time >= 500 && _time <= 800
+		'earlymorning'
+	elseif _time >= 800 && _time <= 1200
+		'morning'
+	elseif _time >= 1200 && _time <= 1300
+		'lunch'
+	elseif _time >= 1300 && _time <= 1700
+		'afternoon'
+	elseif _time >= 1700 && _time <= 2300
+		'night'
+	else
+		'midnight'
+}
+
+// === Get General Season ===
+GetSeason
+{
+	_m = month
+	if _m >= 3 && _m <= 5
+	{
+		'spring'
+	}
+	elseif _m >= 6 && _m <= 8
+	{
+		'summer'
+	}
+	elseif _m >= 9 && _m <= 11
+	{
+		'fall'
+	}
+	else
+	{
+		'winter'
+	}
+}
+
+GetSeasonDetail
+{
+	_d = day	
+	case month {
+		when 1 {
+			'mid_winter'
+		}
+		when 2 {
+			'mid_winter'
+		}
+		when 3 {
+			if _d <= 15 {
+				'late_winter'
+			}
+			else {
+				'early_spring'
+			}
+		}
+		when 4 {
+			'mid_spring'
+		}
+		when 5 {
+			'late_spring'
+		}
+		when 6 {
+			'rainy_season'
+		}
+		when 7 {
+			'early_summer'
+		}
+		when 8 {
+			'mid_summer'
+		}
+		when 9 {
+			if _d <= 15 {
+				'late_summer'
+			}
+			else {
+				'early_fall'
+			}
+		}
+		when 10 {
+			'mid_fall'
+		}
+		when 11 {
+			'late_fall'
+		}
+		when 12 {
+			'early_winter'
+		}
+	}
+}

@@ -167,11 +167,10 @@ RemoveFlag
 		for _i = ARRAYSIZE(_elements) - 1; _i >= 0; _i--
 		{
 			_current = _elements[_i]
-			MiscFlags[_current] = IARRAY
+			flags[_current] = IARRAY
 		}
 	}
 }
-
 
 //———————————————————— Centered Dialogue for Comic Balloon —————————————————————————
 
