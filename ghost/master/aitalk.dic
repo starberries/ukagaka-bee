@@ -14,7 +14,6 @@ OnAiTalk
 GetRandomTalk {
 	_randomPool = IARRAY
 	_randomPool ,= RandomTalk
-	if CheckFlag("dev"); _randomPool ,= TestTalk
 
 	_randomPool
 }
@@ -98,13 +97,30 @@ RandomTalk : nonoverlap_pool
 		"\0\s[excited]My mom brought home some strawberry shortcake from work today."
 
 		// === Schoolwork Stuff ===
-		"\0\s[happy]I took chemistry this year for my science classes. Milovan's dad does some alchemy stuff sometimes, and I know they're not the same thing, but I thought it'd be cool to learn since there might be some similarities.\w7\s[excited]\n\n[half]I wanna do cool alchemy magic one day!"
+		if friendship >= 3 {
+			"\0\s[happy]I took chemistry this year for my science classes. Milovan's dad does some alchemy stuff sometimes, and I know they're not the same thing, but I thought it'd be cool to learn since there might be some similarities.\w7\s[excited]\n\n[half]I wanna do cool alchemy magic one day!"
+		}
 
 		"\0\s[tired]Hrrmm...\nI still have a bunch of homework to do."
 		
 		"\0\s[neutral]A lot of my classmates complain about math subjects, but I like them. Once I know the formula, I just have to follow the steps. It's easier than book reports and stuff, I think."
 
 		"\0\s[tired]I have to write an essay for school..."
+
+		// === Hobbies ===
+		"\0\s[amazed]I got some new colored pencils a little while ago. They feel really nice to color with, I like them a lot."
+
+		if friendship >= 2 {
+			"\0\s[neutral]I felt like doing some drawing today. I think it turned out pretty good."
+		}
+
+		"\0\s[think]Spirits are tricky to draw, because I don't actually know what they look like for sure. I just have to kind of guess based on how people who can see them have drawn them."
+
+		if friendship >= 1 {
+			"\0\s[eep]One of my classmates saw me drawing today at school. They said it was cool, but I wasn't expecting it, so...\n\n[half]\w8\s[ack]Aaaaaaahhhh..."
+		}
+
+		"\0\s[think]I found out something about drawing.\n\n[half]\w8\w4\s[tired]Perspective is hard."
 
 		// === Amanda & Classmates ===
 		{
@@ -119,7 +135,14 @@ RandomTalk : nonoverlap_pool
 		
 		"\0\s[holdStarry]I stopped by the book store after school the other day. I got the next book in the Haunted Tales series! It's the third one, I'm still catching up.\n\nI like them a lot so far though. Very spooky."
 
-		"\0\s[tired]I'm never sure what I should call Milovan's mom. She's not technically a %CHR(34)Mrs.%CHR(34) Evercott because her and Mr. Evercott aren't actually married. But if she's %CHR(34)Miss%CHR(34) or %CHR(34)Ms.%CHR(34) Evercott, that's confusing, because that's also her sister...\w8\w8\n\nI know none of them mind if I call them by name but that feels weird too..."
+		if friendship >= 3 {
+			"\0\s[tired]I'm never sure what I should call Milovan's mom. She's not technically a %CHR(34)Mrs.%CHR(34) Evercott because her and Mr. Evercott aren't actually married. But if she's %CHR(34)Miss%CHR(34) or %CHR(34)Ms.%CHR(34) Evercott, that's confusing, because that's also her sister...\w8\w8\n\nI know none of them mind if I call them by name but that feels weird too..."
+		}
+
+		// === Stellas ===
+		if friendship >= 4 {
+			"\0\s[playful]My favorite stella from the Auburn City teams is definitely Stella Leo.\n\n[half]\w8\%CHR(34)The brilliant star that guides the way!\w5\s[excited] Stella Leo!%CHR(34)"
+		}
 
 		// === Trivia ===
 		"\0\s[surprise]Did you know butterflies don't just drink nectar from flowers? They also drink blood!\w8\w8\n\n[half]\s[wonder]I wonder if there are any butterfly vampires..."
@@ -129,7 +152,9 @@ RandomTalk : nonoverlap_pool
 
 		"\0\s[smile]I think I'm gonna go for a walk to the park later day."
 
-		"\0\s[gaming]Hmm hm hmm~🎵"
+		if friendship >= 2 {
+			"\0\s[gaming]Hmm hm hmm~🎵"
+		}
 
 		if friendship >= 10 {
 			"\0\s[holdNeutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
