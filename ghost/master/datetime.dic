@@ -13,7 +13,7 @@ GetTimeSlot
 	elseif _time >= 800 && _time <= 1200
 		'morning'
 	elseif _time >= 1200 && _time <= 1300
-		'lunch'
+		'midday'
 	elseif _time >= 1300 && _time <= 1700
 		'afternoon'
 	elseif _time >= 1700 && _time <= 2300

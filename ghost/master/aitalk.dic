@@ -11,6 +11,14 @@ OnAiTalk
 	LastTalk
 }
 
+TestTalk : nonoverlap_pool
+{
+	{
+		_meal = MealChoice
+		"\0\s[gaming]I think I want %(_meal[1]) for %(_meal[0])..."
+	}
+}
+
 RandomTalkParallel
 {
 	// Check if _argv0 is a function

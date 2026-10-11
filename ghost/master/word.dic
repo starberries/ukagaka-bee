@@ -73,7 +73,7 @@ mischiefSubject
 	"this weird rumor that's going around"
 }
 
-OnRandomClassmate
+RandomClassmate
 {
 	_chosen = classmates
 	rName=_chosen[0]
@@ -81,4 +81,18 @@ OnRandomClassmate
 	rThem=_chosen[2]
 	rTheir=_chosen[3]
 	rThemself=_chosen[4]
+}
+
+MealChoice
+{
+	_meal = IARRAY
+	case GetTimeSlot
+	{
+		when "earlymorning", "morning"; _meal = ("breakfast", breakfastfood) 
+		when "midday"; _meal = ("lunch", lunchfood)
+		when "afternoon"; _meal = ("dinner", dinnerfood)
+		others; _meal = ("breakfast tomorrow", breakfastfood)
+	}
+
+	_meal
 }

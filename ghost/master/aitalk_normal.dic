@@ -9,17 +9,10 @@ RandomTalkNormal : array
 
 		"\0\s[excited]My mom brought home some strawberry shortcake from work today."
 
-    
-    // Let's give this an actual function when I'm less lazy
-		if GetTimeSlot == "night" || GetTimeSlot == "midnight"
-			"\0\s[gaming]I think I want %(breakfastfood) for breakfast tomorrow..."
-		if GetTimeSlot == "earlymorning" || GetTimeSlot == "morning"
-			"\0\s[gaming]I think I want %(breakfastfood) for breakfast..."
-		if GetTimeSlot == "lunch"
-			"\0\s[gaming]I think I want %(lunchfood) for lunch..."
-		if GetTimeSlot == "afternoon"
-			"\0\s[gaming]I think I want %(dinnerfood) for dinner..."
-
+		{
+			_meal = MealChoice
+			"\0\s[gaming]I think I want %(_meal[1]) for %(_meal[0])..."
+		}
   
 		// === Schoolwork Stuff ===
     "\0\s[tired]Hrrmm...\nI still have a bunch of homework to do."
@@ -47,7 +40,7 @@ RandomTalkNormal : array
 
 		// === Amanda & Classmates ===
 		{
-			OnRandomClassmate
+			RandomClassmate
 			"\0\s[neutral]Today in my %(classes) class, %(rName) got caught %(mischief).\w9\n\n\s[eep]The teacher's scary when she's angry..."
 		}
 
