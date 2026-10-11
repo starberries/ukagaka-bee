@@ -7,126 +7,71 @@ GetTime
 
 GetTimeSlot
 {
-	_time = GetTime
-	if _time >= 500 && _time <= 800
-		'earlymorning'
-	elseif _time >= 800 && _time <= 1200
-		'morning'
-	elseif _time >= 1200 && _time <= 1300
-		'midday'
-	elseif _time >= 1300 && _time <= 1700
-		'afternoon'
-	elseif _time >= 1700 && _time <= 2300
-		'night'
-	else
-		'midnight'
+	case GetTime
+	{
+		when 500-799; "earlymorning"
+		when 800-1099; "morning"
+		when 1100-1299; "midday"
+		when 1300-1699; "afternoon"
+		when 1700-2299; "night"
+		others; "midnight"
+	}
+}
+
+GetSchoolHours
+{
+	case GetTime
+	{
+		when 830-1530; 1
+		others; 0
+	}
 }
 
 GetWeekday
 {
-	_d = ""
-
 	case weekday
 	{
-		when 1
-			_d = "monday"
-		when 2
-			_d = "tuesday"
-		when 3
-			_d = "wednesday"
-		when 4
-			_d = "thursday"
-		when 5
-			_d = "friday"
-		when 6
-			_d = "saturday"
-		others
-			_d = "sunday"
+		when 1; "monday"
+		when 2; "tuesday"
+		when 3; "wednesday"
+		when 4; "thursday"
+		when 5; "friday"
+		when 6; "saturday"
+		others; "sunday"
 	}
-
-	_d
 }
 
 GetIsWeekend
 {
-	_end = 0
-
-	if weekday == 0 || weekday == 6; _end = 1
-
-	_end
+	if weekday == 0 || weekday == 6; 1; else; 0
 }
 
 // === Get General Season ===
 GetSeason
 {
-	_m = month
-	if _m >= 3 && _m <= 5
+	case month
 	{
-		'spring'
-	}
-	elseif _m >= 6 && _m <= 8
-	{
-		'summer'
-	}
-	elseif _m >= 9 && _m <= 11
-	{
-		'fall'
-	}
-	else
-	{
-		'winter'
+		when 3-5; "spring"
+		when 6-8; "summer"
+		when 9-11; "fall"
+		others; "winter"
 	}
 }
 
 GetSeasonDetail
 {
-	_d = day	
 	case month {
-		when 1 {
-			'mid_winter'
-		}
-		when 2 {
-			'mid_winter'
-		}
-		when 3 {
-			if _d <= 15 {
-				'late_winter'
-			}
-			else {
-				'early_spring'
-			}
-		}
-		when 4 {
-			'mid_spring'
-		}
-		when 5 {
-			'late_spring'
-		}
-		when 6 {
-			'rainy_season'
-		}
-		when 7 {
-			'early_summer'
-		}
-		when 8 {
-			'mid_summer'
-		}
-		when 9 {
-			if _d <= 15 {
-				'late_summer'
-			}
-			else {
-				'early_fall'
-			}
-		}
-		when 10 {
-			'mid_fall'
-		}
-		when 11 {
-			'late_fall'
-		}
-		when 12 {
-			'early_winter'
-		}
+		when 1; "mid_winter"
+		when 2; "late_winter"
+		when 3; "early_spring"
+		when 4; "mid_spring"
+		when 5; "late_spring"
+		when 6; "early_summer"
+		when 7; "mid_summer"
+		when 8; "late_summer"
+		when 9; "early_fall"
+		when 10; "mid_fall"
+		when 11; "late_fall"
+		when 12; "early_winter"
 	}
 }
