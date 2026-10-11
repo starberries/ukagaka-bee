@@ -20,11 +20,21 @@ GetTimeSlot
 
 GetSchoolHours
 {
-	case GetTime
+	if !GetWeekday
 	{
-		when 830-1530; 1
-		others; 0
-	}
+		case GetTime
+		{
+			when 830-844; "homeroom"
+			when 845-944; "class_1"
+			when 945-1044; "class_2"
+			when 1045-1144; "class_3"
+			when 1145-1229; "lunch_break"
+			when 1230-1329; "class_4"
+			when 1330-1429; "class_5"
+			when 1430-1529; "class_6"
+			others; 0
+		}
+	} else; 0
 }
 
 GetWeekday
