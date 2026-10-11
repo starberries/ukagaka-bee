@@ -1,0 +1,88 @@
+RandomTalkNormal : array
+{
+		// === FOOD ===
+		"\0\s[think]Do you think spirits have a favorite snack? Hikari likes peach buns, so other spirits must have preferences too..."
+
+		"\0\s[neutral]Amanda and I tried some new fruit snacks from the convenience store today.\w8\n\n[half]\s[unamused]They were weird. I don't really like artificial fruit flavors anyway, but Amanda didn't like them either."
+		
+		"\0\s[holdNeutral]I was thinking I should practice more cooking sometime.\w8\n\n[half]... \s[holdEep]What if I burn my fur?"
+
+		"\0\s[excited]My mom brought home some strawberry shortcake from work today."
+
+    
+    // Let's give this an actual function when I'm less lazy
+		if GetTimeSlot == "night" || GetTimeSlot == "midnight"
+			"\0\s[gaming]I think I want %(breakfastfood) for breakfast tomorrow..."
+		if GetTimeSlot == "earlymorning" || GetTimeSlot == "morning"
+			"\0\s[gaming]I think I want %(breakfastfood) for breakfast..."
+		if GetTimeSlot == "lunch"
+			"\0\s[gaming]I think I want %(lunchfood) for lunch..."
+		if GetTimeSlot == "afternoon"
+			"\0\s[gaming]I think I want %(dinnerfood) for dinner..."
+
+  
+		// === Schoolwork Stuff ===
+    "\0\s[tired]Hrrmm...\nI still have a bunch of homework to do."
+
+    "\0\s[neutral]A lot of my classmates complain about math subjects, but I like them. Once I know the formula, I just have to follow the steps. It's easier than book reports and stuff, I think."
+    
+    "\0\s[tired]I have to write an essay for school..."
+
+		if friendship >= 3
+			"\0\s[happy]I took chemistry this year for my science classes. Milovan's dad does some alchemy stuff sometimes, and I know they're not the same thing, but I thought it'd be cool to learn since there might be some similarities.\w7\s[excited]\n\n[half]I wanna do cool alchemy magic one day!"
+
+
+		// === Hobbies ===
+		"\0\s[amazed]I got some new colored pencils a little while ago. They feel really nice to color with, I like them a lot."
+
+    "\0\s[think]Spirits are tricky to draw, because I don't actually know what they look like for sure. I just have to kind of guess based on how people who can see them have drawn them."
+    
+    "\0\s[think]I found out something about drawing.\n\n[half]\w8\w4\s[tired]Perspective is hard."
+
+		if friendship >= 1
+			"\0\s[eep]One of my classmates saw me drawing today at school. They said it was cool, but I wasn't expecting it, so...\n\n[half]\w8\s[ack]Aaaaaaahhhh..."
+		if friendship >= 2
+			"\0\s[neutral]I felt like doing some drawing today. I think it turned out pretty good."
+
+
+		// === Amanda & Classmates ===
+		{
+			OnRandomClassmate
+			"\0\s[neutral]Today in my %(classes) class, %(rName) got caught %(mischief).\w9\n\n\s[eep]The teacher's scary when she's angry..."
+		}
+
+
+		// === Evercotts & the Bookstore ===
+		"\0\s[starry]On my birthday or sometimes on the holidays, Milovan and his family let me pick out a free book from their bookstore."
+		
+		"\0\s[think]I guess Mr. Evercott has a few regulars who order alchemy commissions from him sometimes. Or potions or other things.\w9\s[think] I wanna order something one day, but it's expensive."
+		
+		"\0\s[holdStarry]I stopped by the book store after school the other day. I got the next book in the Haunted Tales series! It's the third one, I'm still catching up.\n\nI like them a lot so far though. Very spooky."
+
+		if friendship >= 3
+			"\0\s[tired]I'm never sure what I should call Milovan's mom. She's not technically a %CHR(34)Mrs.%CHR(34) Evercott because her and Mr. Evercott aren't actually married. But if she's %CHR(34)Miss%CHR(34) or %CHR(34)Ms.%CHR(34) Evercott, that's confusing, because that's also her sister...\w8\w8\n\nI know none of them mind if I call them by name but that feels weird too..."
+
+
+		// === Stellas ===
+		if friendship >= 4
+			"\0\s[playful]My favorite stella from the Auburn City teams is definitely Stella Leo.\n\n[half]\w8\%CHR(34)The brilliant star that guides the way!\w5\s[excited] Stella Leo!%CHR(34)"
+
+
+		// === Trivia ===
+		"\0\s[surprise]Did you know butterflies don't just drink nectar from flowers? They also drink blood!\w8\w8\n\n[half]\s[wonder]I wonder if there are any butterfly vampires..."
+
+    
+		// === Misc ===
+		"\0\s[amazed]Today I went for a walk up to Hikari's shrine and I saw some of the prettiest flowers blooming! The spirits must be getting a lot of work done!"
+
+		"\0\s[smile]I think I'm gonna go for a walk to the park later day."
+
+		if friendship >= 2
+			"\0\s[gaming]Hmm hm hmm~🎵"
+
+		if friendship >= 10
+			"\0\s[holdNeutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
+
+		if friendship >= 50
+			"\0\s[holdUnamused]It weirds me out whenever someone calls me by my full name.\n\n%CHR(34)Beatrice%CHR(34) just sounds too... \f[bold,true]old lady.\f[bold,default]\w8\w8\n\n\s[eep]Uh. No offense to old ladies, though."
+}
