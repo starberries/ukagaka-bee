@@ -22,6 +22,40 @@ GetTimeSlot
 		'midnight'
 }
 
+GetWeekday
+{
+	_d = ""
+
+	case weekday
+	{
+		when 1
+			_d = "monday"
+		when 2
+			_d = "tuesday"
+		when 3
+			_d = "wednesday"
+		when 4
+			_d = "thursday"
+		when 5
+			_d = "friday"
+		when 6
+			_d = "saturday"
+		others
+			_d = "sunday"
+	}
+
+	_d
+}
+
+GetIsWeekend
+{
+	_end = 0
+
+	if weekday == 0 || weekday == 6; _end = 1
+
+	_end
+}
+
 // === Get General Season ===
 GetSeason
 {
