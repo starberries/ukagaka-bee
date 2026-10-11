@@ -58,29 +58,29 @@ RandomTalkSubArray: array
 	else
 		parallel RandomTalkParallel("RandomTalkSub_Weekday")
 
-	_m  = GetMonthSlot
-	_md = GetMonthSlotDetail
+	_s  = GetSeason
+	_sd = GetSeasonDetail
 	_t  = GetTimeSlot
-	_mn = GETTIME[1]
+	_m = month
 	
 	// === Seasonal Dialogue ===
-	parallel RandomTalkParallel("RandomTalkSub_%(_m)")
-	parallel RandomTalkParallel("RandomTalkSub_%(_m)_%(_t)")
-	parallel RandomTalkParallel("RandomTalkSub_%(_md)")
-	parallel RandomTalkParallel("RandomTalkSub_%(_md)_%(_t)")
+	parallel RandomTalkParallel("RandomTalkSub_%(_s)")
+	parallel RandomTalkParallel("RandomTalkSub_%(_s)_%(_t)")
+	parallel RandomTalkParallel("RandomTalkSub_%(_sd)")
+	parallel RandomTalkParallel("RandomTalkSub_%(_sd)_%(_t)")
 	
 	// === Time-Based Dialogue ===
 	parallel RandomTalkParallel("BootRandomTalkSub_%(_t)")
 	parallel RandomTalkParallel("RandomTalkSub_%(_t)")
 	
 	// === Month Dialogue ===
-	parallel RandomTalkParallel("RandomTalkSub_%(_mn)")
+	parallel RandomTalkParallel("RandomTalkSub_%(_m)")
 	_tmparray = IARRAY
-	if GETTIME[2] <= 15 {
-		_tmparray = RandomTalkParallel("RandomTalkSub_%(_mn)_firsthalf")
+	if day <= 15 {
+		_tmparray = RandomTalkParallel("RandomTalkSub_%(_m)_firsthalf")
 	}
 	else {
-		_tmparray = RandomTalkParallel("RandomTalkSub_%(_mn)_secondhalf")
+		_tmparray = RandomTalkParallel("RandomTalkSub_%(_m)_secondhalf")
 	}
 	parallel _tmparray
 
