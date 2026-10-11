@@ -8,7 +8,13 @@ charset.extension, UTF-8
 dicdir, yaya_base
 
 dic, aitalk.dic
+dic, aitalk_datetime.dic
+dic, aitalk_normal.dic
+
 dic, boot.dic
+
+dic, datetime.dic
+
 dic, menu_kero.dic
 dic, menu_sakura.dic
 dic, meta.dic

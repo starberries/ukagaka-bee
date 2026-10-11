@@ -1,0 +1,55 @@
+// === Weekdays ===
+
+RandomTalkSub_Friday : array
+{
+  "\0\s[excited]It's Friday! Amanda and I are gonna watch a movie marathon!"
+  "\0\s[starry]I'm gonna stay up late tonight and read more of my new book!"
+}
+
+RandomTalkSub_Saturday : array
+{
+  if GetTimeSlot == 'earlymorning' || GetTimeSlot == 'morning'
+  {
+    "\0\s[starry]Iiiit's time for Saturday morning cartoons!!!"
+  }
+}
+
+RandomTalkSub_Weekend : array
+{
+    "\0\s[excited]It's the weekend!!"
+    "\0\s[playful]No school means more times for games and... stuff!"
+}
+
+RandomTalkSub_Weekday : array
+{
+
+}
+
+// === Holidays ===
+RandomTalkSub_Holiday : array
+{
+  // === Halloween ===
+  if _today == "10/31" {
+    "\0\s[playful]It's the spooky day!"
+  }
+
+  // === Christmas ===
+  if _today == "12/25" {
+    "\0\s[holdHappySmile]Happy winter holidays!"
+  }
+
+  // === New Year's Eve ===
+  if _today == "12/31" {
+    "\0\s[holdStarry]It's almost the new year! Are you doing anything to celebrate?"
+  }
+
+  // === New Year ===
+  if _today == "1/1" {
+    "\0\s[excited]Happy New Year!"
+  }
+
+  // === Valentine's Day ===
+  if _today == "2/14" {
+    "\0\s[smile]It's Flower Day!\s[think] These days a lot of people give candy instead of flowers, though."
+  }
+}
