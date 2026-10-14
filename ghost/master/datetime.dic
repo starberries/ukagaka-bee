@@ -1,3 +1,86 @@
+// === From YAYA Docs, Gregorian date to Julian date ===
+J_DATE
+{
+	_y = TOINT(_argv[0])
+	_m = TOINT(_argv[1])
+	_d = TOINT(_argv[2])
+
+	_result = _d-32075+TOINT(1461*(_y+4800+TOINT((_m-14)/12))/4)+TOINT(367*(_m-2-TOINT((_m-14)/12)*12)/12)-TOINT(3*(TOINT((_y+4900+TOINT((_m-14)/12))/100))/4)
+
+	_result
+}
+
+// === Julian to Gregorian date ===
+// praying to the spirits this is cobbled together correctly
+DATE_J
+{
+	_j = TOINT(_argv[0])
+
+	_a = _j + 32044
+	_b = TOINT((4 * _a + 3) / 146097)
+	_c = _a - TOINT(146097 * _b / 4)
+	_d = TOINT((4 * _c + 3) / 1461)
+	_e = _c - TOINT(1461 * _d / 4)
+	_m = TOINT((5 * _e + 2) / 153)
+
+	_day = _e - TOINT((153 * _m + 2) / 5) + 1
+	_day_str = TOSTR(_day)
+	_month = _m + 3 - 12 * TOINT(_m / 10)
+	_month_str = TOSTR(_month)
+	_year = 100 * _b + _d - 4800 + TOINT(_m / 10)
+
+	if _month < 10
+		_month_str = "0" + _month_str
+
+	if _day < 10
+		_day_str = "0" + _day_str
+
+	_result = (TOSTR(_year) + _month_str + _day_str)
+	_result
+}
+
+// === Get the next valid Saturday ===
+NextSaturday
+{
+	_date = TOSTR(_argv[0])
+	_result = ""
+
+	// MMDDYYYY
+	if STRLEN(_date) != 8 {
+		_result = ""
+	} else {
+		// Checking the input can be read as an integer
+		if !ISINTSTR(_date) {
+			_result = ""
+		} else {
+			_year = TOINT(SUBSTR(_date, 0, 4))
+			_month = TOINT(SUBSTR(_date, 4, 2))
+			_day = TOINT(SUBSTR(_date, 6, 2))
+
+			// Checking for invalid inputs
+			if _year < 1 || _month < 1 || _month > 12 || _day < 1 || _day > 31 {
+					_result = ""
+			} else {
+				_j = J_DATE(_year, _month, _day)
+
+				// Check for invalid whole dates (ie February 30th or April 31st)
+				_check = DATE_J(_j)
+
+				if _check != _date {
+					_result = ""
+				} else {
+					_weekday = _j % 7
+					_add = (5 - _weekday + 7) % 7
+
+					_result = DATE_J(_j + _add)
+				}
+			}
+		}
+	}
+
+	_result
+}
+
 // === Get General Time ===
 GetTime
 {
