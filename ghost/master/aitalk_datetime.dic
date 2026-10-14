@@ -53,3 +53,8 @@ RandomTalkSub_Holiday : array
     "\0\s[smile]It's Flower Day!\s[think] These days a lot of people give candy instead of flowers, though."
   }
 }
+
+RandomTalkSub_Early_Fall
+{
+  "\0\s[smile]The leaves are turning pretty colors now."
+}
