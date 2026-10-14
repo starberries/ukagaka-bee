@@ -7,6 +7,11 @@ OnAiTalk
 	else
 	{
 		LastTalk = RandomTalkSub
+		
+		// if J_DATE(year, month, day) >= seriesMaskedKnightDate && friendship >= 10
+		// 	LastTalk = RandomTalkParallel("RandomTalkSeries")[seriesMaskedKnight]
+		// else
+		// 	LastTalk = RandomTalkSub
 	}
 	LastTalk
 }
@@ -97,7 +102,8 @@ RandomTalkSubArray: array
 
 	// === Series Dialogue ==-
 	// Masked Knight conversation series
-	parallel RandomTalkParallel("RandomTalkSeries")
+	if J_DATE(year, month, day) >= seriesMaskedKnightDate && friendship >= 10
+		parallel RandomTalkParallel("RandomTalkSeries")[seriesMaskedKnight]
 
 	// === Everyday Dialogue ===
 	parallel RandomTalkParallel("RandomTalkNormal")

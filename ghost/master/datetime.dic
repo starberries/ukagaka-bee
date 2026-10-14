@@ -12,6 +12,7 @@ J_DATE
 
 // === Julian to Gregorian date ===
 // praying to the spirits this is cobbled together correctly
+// This is really just here for testing purposes honestly
 DATE_J
 {
 	_j = TOINT(_argv[0])
@@ -42,42 +43,16 @@ DATE_J
 // === Get the next valid Saturday ===
 NextSaturday
 {
-	_date = TOSTR(_argv[0])
-	_result = ""
+	_y = TOINT(_argv[0])
+	_m = TOINT(_argv[1])
+	_d = TOINT(_argv[2])
+	_j = J_DATE(_y, _m, _d)
 
-	// MMDDYYYY
-	if STRLEN(_date) != 8 {
-		_result = ""
-	} else {
-		// Checking the input can be read as an integer
-		if !ISINTSTR(_date) {
-			_result = ""
-		} else {
-			_year = TOINT(SUBSTR(_date, 0, 4))
-			_month = TOINT(SUBSTR(_date, 4, 2))
-			_day = TOINT(SUBSTR(_date, 6, 2))
+	_weekday = _j % 7
+	_add = (5 - _weekday + 7) % 7
+	if _add == 0; _add = 7
 
-			// Checking for invalid inputs
-			if _year < 1 || _month < 1 || _month > 12 || _day < 1 || _day > 31 {
-					_result = ""
-			} else {
-				_j = J_DATE(_year, _month, _day)
-
-				// Check for invalid whole dates (ie February 30th or April 31st)
-				_check = DATE_J(_j)
-
-				if _check != _date {
-					_result = ""
-				} else {
-					_weekday = _j % 7
-					_add = (5 - _weekday + 7) % 7
-
-					_result = DATE_J(_j + _add)
-				}
-			}
-		}
-	}
-
+	_result = _j + _add
 	_result
 }
 

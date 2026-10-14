@@ -1,8 +1,14 @@
-RandomTalkSeries : sequential
+OnSeriesMaskedKnight
 {
-  "\0\s[holdAmazed]%(username)! The new season of Masked Knight is airing now!\n\n[half]\w8\w8\s[holdStarry]In this episode, the main character became Masked Knight after finding the transformation belt in his grandfather's attic!"
+  seriesMaskedKnight += 1
+  seriesMaskedKnightDate = NextSaturday(year, month, day)
+}
 
-  "\0\s[amazed]In this week's episode, Masked Knight faced off against a powerful foe! The battle was difficult, but the hero won in the end!"
+RandomTalkSeries : array
+{
+  "\0\s[holdAmazed]%(username)! The new season of Masked Knight is airing now!\n\n[half]\w8\w8\s[holdStarry]In this episode, the main character became Masked Knight after finding the transformation belt in his grandfather's attic!\![raise,OnSeriesMaskedKnight]"
 
-  "\0\s[amazed]This week, Masked Knight fought a monster and was about to deal the finishing blow...\n\n[half]\w8\w8\s[surprised]Only to be stopped by a mysterious figure!\w4\s[ack] And a cliffhanger!!\w8\w8\c...\n\n[half]\w8\s[proud]It's totally this season's secondary knight."
+  "\0\s[amazed]In this week's episode, Masked Knight faced off against a powerful foe! The battle was difficult, but the hero won in the end!\![raise,OnSeriesMaskedKnight]"
+
+  "\0\s[amazed]This week, Masked Knight fought a monster and was about to deal the finishing blow...\n\n[half]\w8\w8\s[surprise]Only to be stopped by a mysterious figure!\w4\s[ack] And a cliffhanger!!\n\n[half]\w8\w8...\n\n[half]\w8\s[proud]It's totally this season's secondary knight.\![raise,OnSeriesMaskedKnight]"
 }
