@@ -6,12 +6,12 @@ OnAiTalk
 	}
 	else
 	{
-		LastTalk = RandomTalkSub
+		// LastTalk = RandomTalkSub
 		
-		// if J_DATE(year, month, day) >= seriesMaskedKnightDate && friendship >= 10
-		// 	LastTalk = RandomTalkParallel("RandomTalkSeries")[seriesMaskedKnight]
-		// else
-		// 	LastTalk = RandomTalkSub
+		if J_DATE(year, month, day) >= seriesMaskedKnightDate && friendship >= 10
+			LastTalk = RandomTalkParallel("RandomTalkSeries")[seriesMaskedKnight]
+		else
+			LastTalk = RandomTalkSub
 	}
 	LastTalk
 }

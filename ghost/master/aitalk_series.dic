@@ -1,6 +1,8 @@
 OnSeriesMaskedKnight
 {
-  seriesMaskedKnight += 1
+  seriesMaskedKnight++
+  if seriesMaskedKnight >= ARRAYSIZE(RandomTalkSeries); seriesMaskedKnight = 0
+  
   seriesMaskedKnightDate = NextSaturday(year, month, day)
 }
 
