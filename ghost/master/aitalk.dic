@@ -95,6 +95,10 @@ RandomTalkSubArray: array
 	// === Holiday/Special Date Dialogue ===
 	parallel RandomTalkParallel("RandomTalkSub_Holiday")
 
+	// === Series Dialogue ==-
+	// Masked Knight conversation series
+	parallel RandomTalkParallel("RandomTalkSeries")
+
 	// === Everyday Dialogue ===
 	parallel RandomTalkParallel("RandomTalkNormal")
 }
