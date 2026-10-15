@@ -12,7 +12,7 @@ dic, aitalk_datetime.dic
 dic, aitalk_normal.dic
 
 dic, boot.dic
-
+dic, comic_text.dic
 dic, datetime.dic
 
 dic, menu_kero.dic
