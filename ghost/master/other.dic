@@ -172,7 +172,7 @@ RemoveFlag
 	}
 }
 
-//———————————————————— Centered Dialogue for Comic Balloon —————————————————————————
+//=== Centered Dialogue for Comic Balloon ===
 
 OnNotifyBalloonInfo
 {
@@ -186,47 +186,59 @@ CenterText
 	_talk
 }
 
-ChooseBalloon
-{
 	// Scuffed as hell way of "centering" the text vertically but it works for now
+CalculateTextLines
+{
 	_text = _argv[0]
 	_clean = RemoveSakuraScript(_text)
 	_breaks = CountSubstring(_text, "\n")
 	_len = STRLEN(_clean)
 	_lines = CEIL(_len / 28) + _breaks + 1
+}
+
+ChooseBalloon
+{
+	
+	_text = _argv[0]
+	_clean = RemoveSakuraScript(_text)
+	_breaks = CountSubstring(_text, "\n")
+	_len = STRLEN(_clean)
+	_lines = CEIL(_len / 30) + _breaks + 1
+	// _lines = CalculateTextLines(_argv[0])
 	_buffer = ""
+	_b = 0
 
 	if _lines >= 10 // 10, 11
 	{
 		if _lines == 10; _buffer = "\n"
 		if _lines == 11; _buffer = "\n[half]"
-		"\b[2]" + _buffer
+		_b = 2
 	}
 	elseif _lines >= 8 // 8, 9
 	{
-		if _lines == 8; buffer = "\n\n[half]"
-		"\b[4]" + _buffer
+		if _lines == 8; _buffer = "\n[half]"
+		_b = 4
 	}
 	elseif _lines >= 6 // 6, 7
 	{
-		if _lines == 6
-		{
-			_buffer = "\n[half]"
-		}
-		"\b[6]" + _buffer
+		if _lines == 6; _buffer = "\n[half]"
+		_b = 6
 	}
 	elseif _lines <= 3 // 1,2,3
 	{
-		if _lines == 1; buffer = "\n\n[half]"
-		if _lines == 2; buffer = "\n"
-		"\b[8]" + _buffer
+		if _lines == 1; _buffer = "\n[half]"
+		if _lines == 2; _buffer = "\n[25]"
+		_b = 8
 	}
 	else // 4, 5
 	{
-		if _lines == 4; _buffer = "\n"
-		if _lines == 5; _buffer = "\n[half]"
-		"\b[0]" + _buffer
+		if _lines == 4; _buffer = "\n[half]"
+		if _lines == 5; _buffer = "\n[25]"
+		_b = 0
 	}
+
+	_result = TOINT(_lines) + "\b[%(_b)]" + _buffer
+	_result
 }
 
 CountSubstring
