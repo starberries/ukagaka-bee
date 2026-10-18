@@ -60,20 +60,18 @@ RandomTalkNormal : array
 			"\0\s[holdWonder]I noticed the ravens that hang around the bookstore were gone for a while. I've seen them around more since Milovan came back."
 
 		// === Stellas ===
-		"\0\s[holdThink]If a group of crows is called a murder...\w8 what's a group of ravens?"
 
 		if friendship >= 4
-			"\0\s[playful]My favorite stella from the Auburn City teams is definitely Stella Leo.\n\n[half]\w8\%CHR(34)The brilliant star that guides the way!\w5\s[excited] Stella Leo!%CHR(34)"
+			// "\0\s[playful]My favorite stella from the Auburn City teams is definitely Stella Leo.\n\n[half]\w8\%CHR(34)The brilliant star that guides the way!\w5\s[excited] Stella Leo!%CHR(34)"
+			"\0\s[playful]My favorite stella from the Auburn City teams is definitely Stella Leo.\n\n[half]\w8\f[color,#E80070]\%CHR(34)The brilliant star that guides the way!\w5\s[excited] Stella Leo!%CHR(34)\f[color,#000000]"
 
 
 		// === Trivia ===
 		"\0\s[surprise]Did you know butterflies don't just drink nectar from flowers? They also drink blood!\w8\w8\n\n[half]\s[wonder]I wonder if there are any butterfly vampires..."
 
+		"\0\s[holdThink]If a group of crows is called a murder...\w8 what's a group of ravens?"
     
 		// === Misc ===
-		"\0\s[amazed]Today I went for a walk up to Hikari's shrine and I saw some of the prettiest flowers blooming! The spirits must be getting a lot of work done!"
-
-		"\0\s[smile]I think I'm gonna go for a walk to the park later today."
 
 		if friendship >= 2
 			"\0\s[gaming]Hmm hm hmm~🎵"
