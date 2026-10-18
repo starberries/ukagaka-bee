@@ -35,7 +35,7 @@ RandomTalkSub_Weekend : array
 {
   "\0\s[excited]It's the weekend!!"
   "\0\s[playful]No school means more times for games and... stuff!"
-  if GetTimeSlot == "morning" || if GetTimeSlot == "midday"
+  if GetTimeSlot == "morning" || GetTimeSlot == "midday"
     "\0\s[smile]I think I'm gonna go for a walk to the park later today."
   
   "\0\s[smile]There was a discount on movie tickets today at the theater, so Amanda and I watched a double feature!"
