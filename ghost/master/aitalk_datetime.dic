@@ -33,17 +33,22 @@ RandomTalkSub_Saturday : array
 
 RandomTalkSub_Weekend : array
 {
-    "\0\s[excited]It's the weekend!!"
-    "\0\s[playful]No school means more times for games and... stuff!"
-    if GetTimeSlot == "morning" || if GetTimeSlot == "midday"
-  		"\0\s[smile]I think I'm gonna go for a walk to the park later today."
+  "\0\s[excited]It's the weekend!!"
+  "\0\s[playful]No school means more times for games and... stuff!"
+  if GetTimeSlot == "morning" || if GetTimeSlot == "midday"
+    "\0\s[smile]I think I'm gonna go for a walk to the park later today."
+  
+  "\0\s[smile]There was a discount on movie tickets today at the theater, so Amanda and I watched a double feature!"
+  
+  "\0\s[holdNeutral]Amanda and I went to go watch a movie at the theater today. We decided to change things up and watch a romantic comedy.\n\n[half]\w8\w4\s[holdWonder]Personally, I think the two leads made a pretty bad couple, but I guess that's just how people write romance sometimes."
 }
 
 RandomTalkSub_Weekday : array
 {
-
   if GetTimeSlot == "early_morning" || GetTimeSlot == "morning"
     "\0\s[smile]Amanda texted me last night. She said she got new fur clips and stuff so we're gonna try out some looks in homeroom."
+
+  "\0\s[eep]Ayako came to school with a karaoke mic today... \w8I didn't think she'd actually use it in class."
 }
 
 // === Holidays ===
@@ -74,8 +79,16 @@ RandomTalkSub_Holiday : array
 
 RandomTalkSub_Spring : array
 {
+  if friendship >= 10 && GetSeasonDetail == "mid_spring" || GetSeasonDetail == "late_spring"
+    "\0\s[wonder]Maybe I should see if I can get a job at the ice cream shop with Amanda this summer.\w8\n\n[half]\s[think]Or would I get sick of ice cream if I did that?"
+
   if GetTimeSlot != "early_morning" && GetTimeSlot != "morning"
 		"\0\s[amazed]Today I went for a walk up to Hikari's shrine and I saw some of the prettiest flowers blooming! The spirits must be getting a lot of work done!"
+}
+
+RandomTalkSub_Summer
+{
+  "\0\s[wonder]Hmm... Maybe I'll go down to the ice cream shop for something."
 }
 
 RandomTalkSub_Early_Fall : array

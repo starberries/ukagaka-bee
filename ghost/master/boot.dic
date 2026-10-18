@@ -15,6 +15,8 @@ OnInitialize
 	testing = 0
 
 	if !ISVAR("flags"); flags = IARRAY
+	if !ISVAR("seriesMaskedKnight"); seriesMaskedKnight = 0
+	if !ISVAR("seriesMaskedKnightDate"); seriesMaskedKnightDate = 0
 	// if !CheckFlag("dev"); flags ,= "dev"
 	// if CheckFlag("dev"); RemoveFlag("dev")
 

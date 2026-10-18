@@ -10,6 +10,7 @@ dicdir, yaya_base
 dic, aitalk.dic
 dic, aitalk_datetime.dic
 dic, aitalk_normal.dic
+dic, aitalk_series.dic
 
 dic, boot.dic
 
