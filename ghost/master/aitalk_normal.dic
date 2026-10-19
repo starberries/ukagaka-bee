@@ -1,6 +1,6 @@
 RandomTalkNormal : array
 {
-		// === FOOD ===
+		// === Food ===
 		"\0\s[think]Do you think spirits have a favorite snack? Hikari likes peach buns, so other spirits must have preferences too..."
 
 		"\0\s[neutral]Amanda and I tried some new fruit snacks from the convenience store today.\w8\n\n[half]\s[unamused]They were weird. I don't really like artificial fruit flavors anyway, but Amanda didn't like them either."
@@ -32,10 +32,25 @@ RandomTalkNormal : array
     
     "\0\s[think]I found out something about drawing.\n\n[half]\w8\w4\s[tired]Perspective is hard."
 
+		"\0\s[holdWonder]I don't know if the La MODE is my favorite game console I've ever had, but I like how the buttons feel."
+
+		"\0\s[gaming]Hm... I should charge the battery soon."
+		
+		"\0\s[neutral]Our local library is kind of far from my house, but I like to stop by there when I don't have allowance money saved up for the bookstore."
+
 		if friendship >= 1
 			"\0\s[eep]One of my classmates saw me drawing today at school. They said it was cool, but I wasn't expecting it, so...\n\n[half]\w8\s[ack]Aaaaaaahhhh..."
-		if friendship >= 2
+
+		if friendship >= 2 {
 			"\0\s[neutral]I felt like doing some drawing today. I think it turned out pretty good."
+			"\0\s[holdNeutral]I like the movie theater here in Port Blossom. The tickets are cheap, and not many people go there so you don't have to worry about anyone being loud during the movie or anything."
+			"\0\s[holdNeutral]I'm not good at raising my Battle Beasts teams for competitive play, but I still have a lot of fun hunting for alternate colors."
+		}
+
+		if friendship >= 8 {
+			"\0\s[gaming]Hmm hm hmm~🎵"
+			"\0\s[gaming]Battle Beasts,\nBattle Beasts~🎵"
+		}
 
 
 		// === Amanda & Classmates ===
@@ -44,7 +59,12 @@ RandomTalkNormal : array
 			"\0\s[neutral]Today in my %(classes) class, %(rName) got caught %(mischief).\w9\n\n\s[eep]The teacher's scary when she's angry..."
 		}
 
+		"\0\s[neutral]A lot of my classmates are really into %(trends) lately."
+
 		"\0\s[neutral]Amanda started reading this one manga lately. It's a dark romance sort of thing, I guess our friend Ayako recommended it. It's not my thing, but the character designs are really pretty!"
+
+		if friendship >= 10
+			"\0\s[neutral]Amanda used to go with me to the library more often, but she's bad at returning books on time, so...\w5 she doesn't go there too much anymore.\n\n[half]\w8\s[think]Actually, I'm. not sure if she ever returned the last books she borrowed."
 
 		// === Bee's Family ===
 		"\0\s[tired]Basil always tries to take my game console when I'm not looking.\w8 Or sometimes when I am."
@@ -86,13 +106,11 @@ RandomTalkNormal : array
 		"\0\s[holdThink]If a group of crows is called a murder...\w8 what's a group of ravens?"
     
 		// === Misc ===
-		if friendship >= 2
-		"\0\s[gaming]Hmm hm hmm~🎵"
-		
-		if friendship >= 5
+
+		if friendship >= 12
 			"\0\s[neutral]A lot of terrans are intolerant to real chocolate... \w8\s[think]But I wonder if it's also bad for kitsune like Mono...? They \f[italic,1]are\f[italic,0] foxes."
 
-		if friendship >= 10
+		if friendship >= 20
 		"\0\s[holdNeutral]You'd think I'd be a senior instead of a junior because of my age, but I actually started school when I was six years old instead of five.\w8\n\n\s[surprise]And you'd think Amanda would be older than me! She looks older, doesn't she?"
 		
 		if friendship >= 50
