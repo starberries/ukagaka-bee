@@ -11,4 +11,10 @@ RandomTalkSeries : array
   "\0\s[amazed]In this week's episode, Masked Knight faced off against a powerful foe! The battle was difficult, but the hero won in the end!\![raise,OnSeriesMaskedKnight]"
 
   "\0\s[amazed]This week, Masked Knight fought a monster and was about to deal the finishing blow...\n\n[half]\w8\w8\s[surprise]Only to be stopped by a mysterious figure!\w4\s[ack] And a cliffhanger!!\n\n[half]\w8\w8...\n\n[half]\w8\s[proud]It's totally this season's secondary knight.\![raise,OnSeriesMaskedKnight]"
+
+  "\0\s[playful]In this episode of Masked Knight... \w5The secondary knight of the season is revealed! He's working with the villains!! \w5Could there be a reason he opposes everything the knights stand for? Find out next week!\![raise,OnSeriesMaskedKnight]"
+
+  "\0\s[starry]In the newest episode, Masked Knight confronts Dark Knight! They had an intense battle! There might have been romantic undertones! The truth came out. Dark Knight was working to sabotage the villains from inside their faction all along!\n\n\w8\s[surprise]But then, the evil overlord appeared! The villains' leader! Next week is the finale!\![raise,OnSeriesMaskedKnight]"
+
+  "\0\s[starry]The finale of Masked Knight aired at last! Masked Knight and Dark Knight teamed up to fight the evil overlord! The overlord was powerful, and it looked like all was lost, until everyone who had been helped along the way cheered for Masked Knight and granted him their power!\n\n[half]\w5\s[excited]The knights were revitalized, and they defeated the evil overlord with a powerful finisher attack!!\![raise,OnSeriesMaskedKnight]"
 }
