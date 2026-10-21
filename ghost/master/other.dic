@@ -221,6 +221,7 @@ ChooseBalloon
 	if _lines >= 10 // 10, 11
 	{
 		if _lines == 10; _buffer = "\n[110]"
+		if _lines == 11; _buffer = "\n[70]"
 		_b = 2
 	}
 	elseif _lines >= 8 // 8, 9

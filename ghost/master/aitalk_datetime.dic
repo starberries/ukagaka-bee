@@ -3,13 +3,13 @@ RandomTalk_Sub_Early_Morning : array
 {
   "\0\s[sleep]Zzz..."
   "\0\s[tired]It's early..."
-  "\0\s[holdNeutral]If I'm up early enough in the morning, I like to fit some shows in before school."
-  "\0\s[surprise]I can't believe the birds|outside are so active already."
+  "\0\s[holdNeutral]If I'm up early||enough in the morning,|I like to fit some shows in before school."
+  "\0\s[surprise]I can't believe the|birds outside are so|active already."
 }
 
 RandomTalk_Sub_Morning : array
 {
-  "\0\s[holdThink]Why do you think scrambled eggs are mostly a breakfast food?"
+  "\0\s[holdThink]Why do you think|scrambled eggs are mostly|a breakfast food?"
 }
 
 RandomTalkSub_Midday : array
@@ -19,14 +19,14 @@ RandomTalkSub_Midday : array
 
 RandomTalkSub_Night
 {
-  "\0\s[wonder]Are there different\nspirits that come out at night instead of the day?\n\n[half]\w3 There's flower spirits,\w3\n and wind spirits,\w3 and stuff like that...\n\n[half]\w5\s[surprise]Right! Hikari's a moon spirit!|So maybe there's... owl spirits or something?"
+  "\0\s[wonder]Are there different|spirits that come out at night instead of the day?|||\w3 There's flower spirits,\w3\n and wind spirits,\w3 and stuff like that...|||\w5\s[surprise]Right! Hikari's a moon spirit!|So maybe there's... owl spirits or something?"
 }
 
 // === Weekdays ===
 
 RandomTalkSub_Friday : array
 {
-  "\0\s[excited]It's Friday! Amanda and|I are gonna watch a movie marathon!"
+  "\0\s[excited]It's Friday! Amanda|and I are gonna watch a|movie marathon!"
   "\0\s[starry]I'm gonna stay up late|tonight and read more of|my new book!"
 }
 
@@ -39,16 +39,16 @@ RandomTalkSub_Saturday : array
 RandomTalkSub_Weekend : array
 {
   "\0\s[excited]It's the weekend!!"
-  "\0\s[playful]No school means more times for games and... stuff!"
+  "\0\s[playful]No school means|more time for games|and... stuff!"
   if GetTimeSlot == "morning" || GetTimeSlot == "midday"
-    "\0\s[smile]I think I'm gonna go for a walk to the park later today."
+    "\0\s[smile]I think I'm gonna|go for a walk to the|park later today."
   
-  "\0\s[smile]There was a discount on movie tickets today at the theater, so Amanda and I watched a double feature!"
+  "\0\s[smile]There was a discount on tickets today at the theater, so Amanda and I watched a double feature!"
   
-  "\0\s[holdNeutral]Amanda and I watched||a movie at the theater today. We decided to change things up and watch a romantic comedy.||||\w8\w4\s[holdWonder]Personally, I think the two leads made a pretty bad couple, but I guess that's just how people write romance sometimes."
+  "\0\s[holdNeutral]Amanda and I watched||a movie at the theater today. We decided to change things up and watch a romantic comedy.||||\w8\w4\s[holdWonder]Personally, I think the|two leads made a pretty bad couple, but I guess that's just how people write romance sometimes."
 
   if GetTimeSlot == "midnight"
-    "\0\s[tired]I know I should be in bed right now, but...\w5 There's this anime I've been watching that's really cool.\w5|||\s[ack]Just one more episode and then I'll go to bed."
+    "\0\s[tired]I know I should be in|bed right now, but...\w5 There's this anime I've been watching that's really cool.\w5|||\s[ack]Just one more episode|and then I'll go to bed."
 }
 
 RandomTalkSub_Weekday : array
@@ -56,7 +56,7 @@ RandomTalkSub_Weekday : array
   if GetTimeSlot == "early_morning" || GetTimeSlot == "morning"
     "\0\s[smile]Amanda texted me last night. She said she got new fur clips and stuff so we're gonna try out some looks in homeroom."
 
-  "\0\s[eep]Ayako came to school with a karaoke mic today... \w8I didn't think she'd actually use it in class."
+  "\0\s[eep]Ayako came to school|with a karaoke mic today...|\w8I didn't think she'd actually|use it in class."
 
   if GetTimeSlot == "afternoon"
     "\0\s[holdPlayful]School's out for the day, and it's time to play some games!"
@@ -70,12 +70,12 @@ RandomTalkSub_Holiday : array
     "\0\s[playful]It's the spooky day!"
 
   // === Christmas ===
-  if _today == "12/25"
-    "\0\s[holdHappySmile]Happy winter holidays!"
+  if _today == "12/25" // Update the date here
+    "\0\s[holdHappy]Happy winter holidays!"
 
   // === New Year's Eve ===
   if _today == "12/31"
-    "\0\s[holdStarry]It's almost the new year! Are you doing anything to celebrate?"
+    "\0\s[holdStarry]It's almost the new year!|Are you doing anything to celebrate?"
 
   // === New Year ===
   if _today == "1/1"
@@ -83,7 +83,7 @@ RandomTalkSub_Holiday : array
 
   // === Valentine's Day ===
   if _today == "2/14"
-    "\0\s[smile]It's Flower Day!\s[think] These days a lot of people give candy instead of flowers, though."
+    "\0\s[smile]It's Flower Day!\s[think]||These days a lot of people give candy instead of|flowers, though."
 }
 
 // === Seasons ===
@@ -91,22 +91,22 @@ RandomTalkSub_Holiday : array
 RandomTalkSub_Spring : array
 {
   if friendship >= 10 && GetSeasonDetail == "mid_spring" || GetSeasonDetail == "late_spring"
-    "\0\s[wonder]Maybe I should see if I can get a job at the ice cream shop with Amanda this summer.\w8\n\n[half]\s[think]Or would I get sick of ice cream if I did that?"
+    "\0\s[wonder]Maybe I should see if|I can get a job at the ice cream shop with Amanda|this summer.\w8||||\s[think]Or would I get sick of|ice cream if I did that?"
 
   if GetTimeSlot != "early_morning" && GetTimeSlot != "morning"
-		"\0\s[amazed]Today I went for a walk up to Hikari's shrine and I saw some of the prettiest flowers blooming! The spirits must be getting a lot of work done!"
+		"\0\s[amazed]Today I went for a walk|up to Hikari's shrine and I saw some of the prettiest flowers blooming! The spirits must be getting a lot of work done!"
 }
 
 RandomTalkSub_Summer
 {
-  "\0\s[wonder]Hmm... Maybe I'll go down to the ice cream shop for something."
+  "\0\s[wonder]Hmm... Maybe I'll go|down to the ice cream shop for something."
 }
 
 RandomTalkSub_Early_Fall : array
 {
-  "\0\s[smile]The leaves are turning pretty colors now."
-  "\0\s[holdWonder]Fall means it's time to give the spirits offerings like candy...\w8 \s[holdPlayful]And we all get snacks too."
-  "\0\s[surprise]It's starting to get dark earlier now, isn't it?"
+  "\0\s[smile]The leaves are turning|pretty colors now."
+  "\0\s[holdWonder]Fall means it's time to|give the spirits offerings|like candy...\w8 \s[holdPlayful]And for the rest of us to enjoy snacks too."
+  "\0\s[surprise]It's starting to get|dark earlier now, isn't it?"
 }
 
 RandomTalkSub_Mid_Fall : array
@@ -117,7 +117,7 @@ RandomTalkSub_Mid_Fall : array
 
 RandomTalkSub_Late_Fall : array
 {
-  "\0\s[ack]It's starting to get cold now."
+  "\0\s[ack]It's getting cold out now."
 }
 
 RandomTalkSub_Winter : array
@@ -133,10 +133,10 @@ RandomTalkSub_Early_Winter : array
 RandomTalkSub_Mid_Winter : array
 {
   "\0\s[amazed]The snow outside is so nice!"
-  "\0\s[playful]I wanna make a snowman. Or a snowrabbit. The ears are tricky, though."
+  "\0\s[playful]I wanna make a snowman.|Or a snowrabbit. The ears are tricky, though."
 }
 
 RandomTalkSub_Late_winter : array
 {
-  "\0\s[holdWonder]On the one hand, I'll miss the snow when it all melts.\w8\s[tired] But on the other hand, I can't wait for the weather to warm up again."
+  "\0\s[holdWonder]On the one hand, I'll miss|the snow when it all melts.\w8\s[tired] But on the other hand, I can't wait for the weather to warm up again."
 }
