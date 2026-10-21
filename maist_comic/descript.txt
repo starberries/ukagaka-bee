@@ -8,8 +8,9 @@ use_input_alpha,1
 //——— Basic information ———
 name,Starberries Comic Balloon
 craftman,Mai Starberries
-craftmanurl,https://maistarberries.carrd.co/
-homeurl,https://github.com/starberries/ukagaka-balloon-comic/
+craftmanw,Mai Starberries
+craftmanurl,https://sheezy.art/maistarberries
+homeurl,https://raw.githubusercontent.com/starberries/ukagaka-balloon-comic/refs/heads/main/
 
 
 //——— Display area ———

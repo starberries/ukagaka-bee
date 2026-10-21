@@ -55,7 +55,7 @@ file,maist_comic/balloons6.png910ca6b4f4d1970214781fe6c8bdb7a9size=8368date=2
 file,maist_comic/balloons7.pngb270f3ee49587a20ab2500ba21401c0bsize=8329date=2026-10-07T15:08:42
 file,maist_comic/balloons8.png58661d8e5e5e0368532dfcd4b4a82920size=5666date=2026-10-07T15:07:14
 file,maist_comic/balloons9.png719844c70fefdbd174094e91c4b20660size=5636date=2026-10-07T15:04:12
-file,maist_comic/descript.txtd2bbd86b521b76db5fb741bb0eba577csize=1744date=2026-10-21T02:17:17
+file,maist_comic/descript.txtd807ddcfdee3f6936e914cb049a20af0size=1803date=2026-10-21T02:46:20
 file,maist_comic/install.txt0a2cd769631a19c147d37ba07d1cc76esize=82date=2026-09-25T19:06:02
 file,maist_comic/online0.pngbad5ff405b09d49d1d6269586e11278fsize=423date=2026-10-07T15:47:07
 file,maist_comic/readme.mdf854d193f9592eef280fffd8df1d28d5size=1224date=2026-10-08T01:54:04
