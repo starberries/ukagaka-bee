@@ -1,15 +1,18 @@
 charset,UTF-8
 
-name,Bee
+name,Bee - On Starlit Tides
 type,ghost
 
 shiori,yaya.dll
 
 craftman,Mai Starberries
-craftmanurl,https://maistarberries.carrd.co/
+craftmanw,Mai Starberries
+craftmanurl,https://sheezy.art/maistarberries
 
 sakura.name,Bee
 kero.name,Amanda
+
+balloon,Starberries Comic balloon
 
 icon,icon.ico
 

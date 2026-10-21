@@ -1,0 +1,98 @@
+charset,UTF-8
+type,balloon
+use_self_alpha,1
+use_input_alpha,1
+//overlay_outside_balloon,1
+
+
+//——— Basic information ———
+name,Starberries Comic Balloon
+craftman,Mai Starberries
+craftmanurl,https://maistarberries.carrd.co/
+homeurl,https://github.com/starberries/ukagaka-balloon-comic/
+
+
+//——— Display area ———
+origin.x,0
+origin.y,0
+
+validrect.left,80
+validrect.top,50
+validrect.right,-80
+validrect.bottom,-40
+
+//wordwrappoint.x,0
+
+
+//——— Font ———
+font.name,SourGummy-Regular.ttf
+font.height,20
+
+// font.color.r,101
+// font.color.g,127
+// font.color.b,148
+
+// anchor.font.color.r,015
+// anchor.font.color.g,084
+// anchor.font.color.b,138
+
+cursor.font.color.r,015
+cursor.font.color.g,084
+cursor.font.color.b,138
+
+cursor.style,underline
+
+disable.font.color.r,146
+disable.font.color.g,135
+disable.font.color.b,178
+
+
+//——— Arrows ———
+// arrow0.x,-90
+// arrow0.y,80
+
+// arrow1.x,-90
+// arrow1.y,-80
+
+
+//——— Online marker ———
+// onlinemarker.x,-90
+// onlinemarker.y,-80
+
+//onlinemarker.interval,175
+
+
+//——— SSTP ———
+
+sstpmarker.x,40
+sstpmarker.y,-23
+
+sstpmessage.font.name,SourGummy-Regular.ttf
+sstpmessage.font.height,13
+
+sstpmessage.font.color.r,150
+sstpmessage.font.color.g,150
+sstpmessage.font.color.b,150
+sstpmessage.x,50
+// sstpmessage.xr,-20
+sstpmessage.y,-23
+
+
+//——— Number ———
+number.font.name,SourGummy-Regular.ttf
+number.font.height,16
+
+number.xr,-20
+number.y,-17
+
+number.font.color.r,137
+number.font.color.g,154
+number.font.color.b,168
+
+
+//——— Input box ———
+communicatebox.x,14
+communicatebox.y,20
+
+communicatebox.width,470
+communicatebox.height,40
