@@ -12,7 +12,7 @@ craftmanurl,https://sheezy.art/maistarberries
 sakura.name,Bee
 kero.name,Amanda
 
-balloon,Starberries Comic balloon
+balloon,Starberries Comic Balloon
 
 icon,icon.ico
 
