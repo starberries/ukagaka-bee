@@ -10,8 +10,8 @@ OnTranslate
 	if ComicBalloon
 	{
 		_talk = CenterText(_talk)
-		_talk = ChooseBalloon(_talk) + _talk
-		_talk = DiamondWrapLineBreaks(_talk)
+		// _talk = ChooseBalloon(_talk) + TOINT(CalculateTextLines(_talk)) + ":" + DiamondWrapLineBreaks(_talk)
+		_talk = ChooseBalloon(_talk) + DiamondWrapLineBreaks(_talk)
 	}
 
 	TOSTR(_talk)
@@ -191,12 +191,13 @@ DiamondWrapLineBreaks
 {
 	_text = _argv[0]
 	if ComicBalloon {
-		REPLACE(_text, "||", "\n")
-		REPLACE(_text, "|", "\n")
-	 } else { 
-		REPLACE(_text, '||', " ")
-		REPLACE(_text, '|', " ")
-	 }
+		_text = REPLACE(_text, "||", "\n")
+		_text = REPLACE(_text, "|", "\n")
+	} else { 
+		_text = REPLACE(_text, '||', " ")
+		_text = REPLACE(_text, '|', " ")
+	}
+	_text
 }
 
 	// Scuffed as hell way of "centering" the text vertically but it works for now
@@ -219,30 +220,33 @@ ChooseBalloon
 
 	if _lines >= 10 // 10, 11
 	{
-		if _lines == 10; _buffer = "\n"
-		if _lines == 11; _buffer = "\n[half]"
+		if _lines == 10; _buffer = "\n[100]"
+		if _lines == 11; _buffer = "\n[60]"
 		_b = 2
 	}
 	elseif _lines >= 8 // 8, 9
 	{
-		if _lines == 8; _buffer = "\n[half]"
+		if _lines == 8; _buffer = "\n[90]"
+		if _lines == 9; _buffer = "\n[50]"
 		_b = 4
 	}
 	elseif _lines >= 6 // 6, 7
 	{
-		if _lines == 6; _buffer = "\n[half]"
+		if _lines == 6; _buffer = "\n[100]"
+		if _lines == 7; _buffer = "\n[60]"
 		_b = 6
 	}
 	elseif _lines <= 3 // 1,2,3
 	{
-		if _lines == 1; _buffer = "\n[half]"
-		if _lines == 2; _buffer = "\n[25]"
+		if _lines == 1; _buffer = "\n[130]"
+		if _lines == 2; _buffer = "\n[90]"
+		if _lines == 3; _buffer = "\n[50]"
 		_b = 8
 	}
 	else // 4, 5
 	{
-		if _lines == 4; _buffer = "\n[half]"
-		if _lines == 5; _buffer = "\n[25]"
+		if _lines == 4; _buffer = "\n[120]"
+		if _lines == 5; _buffer = "\n[80]"
 		_b = 0
 	}
 
