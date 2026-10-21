@@ -46,7 +46,7 @@ OnWindowStateRestore
 
 On_homeurl
 {
-	"https://raw.githubusercontent.com/starberries/ukagaka-bee/refs/heads/main/updates/"
+	"https://raw.githubusercontent.com/starberries/ukagaka-bee/refs/heads/main/"
 }
 
 //—————————————————————————————— Right click menu links ——————————————————————————————
