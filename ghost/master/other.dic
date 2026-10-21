@@ -208,7 +208,7 @@ CalculateTextLines
 	_breaks = CountSubstring(_text, "\n")
 	_pipes = CountSubstring(_text, "||")
 	_len = STRLEN(_clean)
-	_lines = CEIL(_len / 33) + _breaks + _pipes + 1
+	_lines = CEIL(_len / 30) + _breaks + _pipes + 1
 	_lines
 }
 
@@ -220,33 +220,32 @@ ChooseBalloon
 
 	if _lines >= 10 // 10, 11
 	{
-		if _lines == 10; _buffer = "\n[100]"
-		if _lines == 11; _buffer = "\n[60]"
+		if _lines == 10; _buffer = "\n[110]"
 		_b = 2
 	}
 	elseif _lines >= 8 // 8, 9
 	{
-		if _lines == 8; _buffer = "\n[90]"
-		if _lines == 9; _buffer = "\n[50]"
+		if _lines == 8; _buffer = "\n[70]"
+		if _lines == 9; _buffer = "\n[30]"
 		_b = 4
 	}
 	elseif _lines >= 6 // 6, 7
 	{
-		if _lines == 6; _buffer = "\n[100]"
-		if _lines == 7; _buffer = "\n[60]"
+		if _lines == 6; _buffer = "\n[90]"
+		if _lines == 7; _buffer = "\n[50]"
 		_b = 6
 	}
 	elseif _lines <= 3 // 1,2,3
 	{
-		if _lines == 1; _buffer = "\n[130]"
-		if _lines == 2; _buffer = "\n[90]"
-		if _lines == 3; _buffer = "\n[50]"
+		if _lines == 1; _buffer = "\n[100]"
+		if _lines == 2; _buffer = "\n[60]"
+		if _lines == 3; _buffer = "\n[20]"
 		_b = 8
 	}
 	else // 4, 5
 	{
-		if _lines == 4; _buffer = "\n[120]"
-		if _lines == 5; _buffer = "\n[80]"
+		if _lines == 4; _buffer = "\n[110]"
+		if _lines == 5; _buffer = "\n[70]"
 		_b = 0
 	}
 
