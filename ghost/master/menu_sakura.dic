@@ -23,15 +23,6 @@ OnSakuraMenu : all
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
 	
-	if CheckFlag("dev")
-	{
-		if testing {
-			"\![*]\q[Disable debug mode,OnToggleDebug]\n\n"
-		} else {
-			"\![*]\q[Switch to debug mode,OnToggleDebug]\n\n"
-		}
-	}
-	
 	"\![*]\q[Cancel,blank]"	
 }
 
