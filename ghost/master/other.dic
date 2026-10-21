@@ -206,7 +206,7 @@ CalculateTextLines
 	_breaks = CountSubstring(_text, "\n")
 	_pipes = CountSubstring(_text, "||")
 	_len = STRLEN(_clean)
-	_lines = CEIL(_len / 28) + _breaks + _pipes + 1
+	_lines = CEIL(_len / 33) + _breaks + _pipes + 1
 	_lines
 }
 
