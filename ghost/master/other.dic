@@ -189,12 +189,13 @@ CenterText
 
 DiamondWrapLineBreaks
 {
+	_text = _argv[0]
 	if ComicBalloon {
-		REPLACE(_argv[0], "||", "\n")
-		REPLACE(_argv[0], "|", "\n")
+		REPLACE(_text, "||", "\n")
+		REPLACE(_text, "|", "\n")
 	 } else { 
-		REPLACE(_argv[0], '||', " ")
-		REPLACE(_argv[0], '|', " ")
+		REPLACE(_text, '||', " ")
+		REPLACE(_text, '|', " ")
 	 }
 }
 
@@ -212,13 +213,6 @@ CalculateTextLines
 
 ChooseBalloon
 {
-	
-	// _text = _argv[0]
-	// CalculateTextLines(_text)
-	// _clean = RemoveSakuraScript(_text)
-	// _breaks = CountSubstring(_text, "\n")
-	// _len = STRLEN(_clean)
-	// _lines = CEIL(_len / 30) + _breaks + 1
 	_lines = CalculateTextLines(_argv[0])
 	_buffer = ""
 	_b = 0

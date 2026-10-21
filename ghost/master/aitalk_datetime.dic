@@ -4,7 +4,7 @@ RandomTalk_Sub_Early_Morning : array
   "\0\s[sleep]Zzz..."
   "\0\s[tired]It's early..."
   "\0\s[holdNeutral]If I'm up early enough in the morning, I like to fit some shows in before school."
-  "\0\s[surprised]I can't believe the birds outside are so active already."
+  "\0\s[surprise]I can't believe the birds|outside are so active already."
 }
 
 RandomTalk_Sub_Morning : array
