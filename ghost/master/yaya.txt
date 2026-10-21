@@ -23,6 +23,7 @@ dic, mouse.dic
 dic, other.dic
 dic, word.dic
 
+dic, text_handling.dic
 // log,ayame.log
 
 msglang,english

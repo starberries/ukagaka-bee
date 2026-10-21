@@ -1,0 +1,220 @@
+/*
+Assuming a stanard max line width is a score of 87
+maxWidth = 87
+1-line = 100%
+2-line = 100%
+3-line = 80% / 100%
+4-line = 80% / 100%
+5-line = 64%? / 80% / 100%
+6-line = 64%? / 80% / 100%
+7-line = 50%? / 64%? / 80% / 100%
+8-line = 50%? / 64%? / 80% / 100%
+9-line = 50%? / 64%? / 80% / 100%
+10-line = 40%? / 50% / 64% / 80% / 100%
+11-line = 40%? / 50% / 64% / 80% / 100%
+
+
+1. GetStringWidth for whole string
+2. Estimate the line count
+3. Split the text up into lines that fit the width of the current line #
+	1. Split the array into words
+	2. Get the character width of all characters in in the word and add them together
+	3. Add width of words until the current max line width is reached or as close as possible without going over
+	4. Check that it's longer than the previous line (if half or less of the intended line count) or shorter than the previous (if > half the intended line count)
+4. If the text runs out before the final line # is reached:
+	1. Stop the process
+	2. pick the next smallest line profile
+	3. Try again
+5. If there is text leftover after the final line # is filled:
+	1. Stop the process
+	2. Pick the next largest line profile
+	3. try again
+6. Otherwise, output the text as is (also pass the final line count for balloon choice)
+*/
+
+GetStringWidth {
+  _text = RemoveSakuraScript(_argv[0])
+  _width = 0
+
+  for _i; _i < STRLEN(_text); _i++ {
+    _char = SUBSTR(_text, _i, 1)
+
+    case _char {
+      when "i", "j", "l", "I", ".", ",", "!", ";", "'"
+        _width += 1
+      when "J", "1", "-", "*", "(", ")", '"', "/", "|"
+        _width += 2
+      when "g", "m", "w", "M", "Q", "@"
+        _width += 4
+      others
+        _width += 3
+    }
+  }
+
+  _width
+}
+
+GetDiamondProfiles {
+  _i = _argv[0]
+  _profiles = IARRAY
+  
+  _profiles,="1.0" // 1-2 line
+  _profiles,="0.8, 1.0" // 3-4 line
+  _profiles,="0.65, 0.8, 1.0" // 5-6 line
+  _profiles,="0.5, 0.65, 0.8, 1.0" // 7-8 line
+  _profiles,="0.4, 0.5, 0.65, 0.8, 1.0" // 9-10 line
+  _profiles,="0.3, 0.4, 0.5, 0.65, 0.8, 1.0" // 11+ line
+
+  _profiles[_i]
+}
+
+CalculateLineCount {
+  _text = _argv[0]
+  _width = GetStringWidth(_text)
+  _maxWidth = 87
+  _currentLine = 0
+  _lineWidth = _maxWidth
+  _expectedLines = 1
+
+  _leftover = _width
+  while _leftover > _maxWidth {
+    if ROUND(_leftover / 2) <= _maxWidth {
+      _expectedLines++
+      break
+    } else {
+      _maxWidth -= _maxWidth * (_currentLine * 0.2) // Get current line max width
+      _leftover -= _maxWidth * 2 // Deduct current max width from leftover width for two lines
+      _expectedLines += 2
+    }
+
+    // _leftover - 1
+  }
+
+  _expectedLines = AdjustLineCount(_text, _expectedLines)
+  
+  _expectedLines
+}
+
+AdjustLineCount {
+  _text = _argv[0]
+  _lines = _argv[1]
+	_breaks = CountSubstring(_text, "\n")
+	_pipes = CountSubstring(_text, "||")
+  _lines += _breaks + _pipes
+
+  _lines
+}
+
+//=== Centered Dialogue for Comic Balloon ===
+
+OnNotifyBalloonInfo
+{
+	ComicBalloon = (reference0 == "Starberries Comic Balloon")
+}
+
+CenterText
+{
+	_align = "\f[align,center]"
+	_talk = _align + REPLACE(_argv[0], "\n", _align + "\n")
+	_talk
+}
+
+DiamondWrapLineBreaks
+{
+	_text = _argv[0]
+	if ComicBalloon {
+		_text = REPLACE(_text, "||", "\n")
+		_text = REPLACE(_text, "|", "\n")
+	} else { 
+		_text = REPLACE(_text, '||', " ")
+		_text = REPLACE(_text, '|', " ")
+	}
+	_text
+}
+
+	// Scuffed as hell way of "centering" the text vertically but it works for now
+CalculateTextLines
+{
+	_text = _argv[0]
+	_clean = RemoveSakuraScript(_text)
+	_breaks = CountSubstring(_text, "\n")
+	_pipes = CountSubstring(_text, "||")
+	_len = STRLEN(_clean)
+	_lines = CEIL(_len / 30) + _breaks + _pipes + 1
+	_lines
+}
+
+ChooseBalloon
+{
+  _text = _argv[0]
+  _width = GetStringWidth(_text)
+  _lines = CalculateLineCount(_text)
+
+	_buffer = ""
+	_b = 0
+
+	if _lines >= 10 // 10, 11
+	{
+		if _lines == 10; _buffer = "\n[110]"
+		if _lines == 11; _buffer = "\n[70]"
+		_b = 2
+	}
+	elseif _lines >= 8 // 8, 9
+	{
+		if _lines == 8; _buffer = "\n[70]"
+		if _lines == 9; _buffer = "\n[30]"
+		_b = 4
+	}
+	elseif _lines >= 6 // 6, 7
+	{
+		if _lines == 6; _buffer = "\n[90]"
+		if _lines == 7; _buffer = "\n[50]"
+		_b = 6
+	}
+	elseif _lines <= 3 // 1,2,3
+	{
+		if _lines == 1; _buffer = "\n[100]"
+		if _lines == 2; _buffer = "\n[60]"
+		if _lines == 3; _buffer = "\n[20]"
+		_b = 8
+	}
+	else // 4, 5
+	{
+		if _lines == 4; _buffer = "\n[110]"
+		if _lines == 5; _buffer = "\n[70]"
+		_b = 0
+	}
+
+	_result = "\b[%(_b)]" + _buffer
+	_result
+}
+
+CountSubstring
+{
+		_text = _argv[0]
+		_search = _argv[1]
+		_count = 0
+		_pos = 0
+
+		while _pos >= 0
+		{
+			_pos = STRSTR(_text, _search, _pos)
+			if _pos < 0
+			{
+				break
+			}
+			_count++
+			_pos += STRLEN(_search)
+
+		}
+
+		_count
+}
+
+// Remove Sakura Script commands.
+RemoveSakuraScript
+{
+    _text = RE_REPLACE(_argv[0], '\\_{0,2}[a-zA-Z0-9*!&-](\d|\[("([^"]|\\")+?"|([^\]]|\\\])+?)+?\])?', '')
+    _text = REPLACE(_text, '\\', '\')
+    _text
+}
