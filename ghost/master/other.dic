@@ -11,6 +11,7 @@ OnTranslate
 	{
 		_talk = CenterText(_talk)
 		_talk = ChooseBalloon(_talk) + _talk
+		_talk = DiamondWrapLineBreaks(_talk)
 	}
 
 	TOSTR(_talk)
@@ -186,25 +187,39 @@ CenterText
 	_talk
 }
 
+DiamondWrapLineBreaks
+{
+	if ComicBalloon {
+		REPLACE(_argv[0], "||", "\n")
+		REPLACE(_argv[0], "|", "\n")
+	 } else { 
+		REPLACE(_argv[0], '||', " ")
+		REPLACE(_argv[0], '|', " ")
+	 }
+}
+
 	// Scuffed as hell way of "centering" the text vertically but it works for now
 CalculateTextLines
 {
 	_text = _argv[0]
 	_clean = RemoveSakuraScript(_text)
 	_breaks = CountSubstring(_text, "\n")
+	_pipes = CountSubstring(_text, "||")
 	_len = STRLEN(_clean)
-	_lines = CEIL(_len / 28) + _breaks + 1
+	_lines = CEIL(_len / 28) + _breaks + _pipes + 1
+	_lines
 }
 
 ChooseBalloon
 {
 	
-	_text = _argv[0]
-	_clean = RemoveSakuraScript(_text)
-	_breaks = CountSubstring(_text, "\n")
-	_len = STRLEN(_clean)
-	_lines = CEIL(_len / 30) + _breaks + 1
-	// _lines = CalculateTextLines(_argv[0])
+	// _text = _argv[0]
+	// CalculateTextLines(_text)
+	// _clean = RemoveSakuraScript(_text)
+	// _breaks = CountSubstring(_text, "\n")
+	// _len = STRLEN(_clean)
+	// _lines = CEIL(_len / 30) + _breaks + 1
+	_lines = CalculateTextLines(_argv[0])
 	_buffer = ""
 	_b = 0
 

@@ -46,6 +46,9 @@ RandomTalkSub_Weekend : array
   "\0\s[smile]There was a discount on movie tickets today at the theater, so Amanda and I watched a double feature!"
   
   "\0\s[holdNeutral]Amanda and I went to go watch a movie at the theater today. We decided to change things up and watch a romantic comedy.\n\n[half]\w8\w4\s[holdWonder]Personally, I think the two leads made a pretty bad couple, but I guess that's just how people write romance sometimes."
+
+  if GetTimeSlot == "midnight"
+    "\0\s[tired]I know I should be in bed right now, but...\w5 There's this anime I've been watching that's really cool.\w5\n\n[half]\s[ack]Just one more episode and then I'll go to bed."
 }
 
 RandomTalkSub_Weekday : array

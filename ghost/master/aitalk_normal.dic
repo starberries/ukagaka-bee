@@ -67,7 +67,7 @@ RandomTalkNormal : array
 			"\0\s[neutral]Amanda used to go with me to the library more often, but she's bad at returning books on time, so...\w5 she doesn't go there too much anymore.\n\n[half]\w8\s[think]Actually, I'm. not sure if she ever returned the last books she borrowed."
 
 		// === Bee's Family ===
-		"\0\s[tired]Basil always tries to take my game console when I'm not looking.\w8 Or sometimes when I am."
+		"\0\s[tired]Basil always tries to|take my game console when I'm not looking.\w8 Or sometimes when I am."
 
 		"\0\s[neutral]Basil's really into blocks lately. I think he just likes knocking them over when you stack them.\w8 I do too."
 
