@@ -4,7 +4,7 @@ OnFirstBoot
 	stroke = 0
 	LastTalk = ""
 
-	firstBootDialogue = "\0\s[gaming]...\_w[1000] \0\s[gamingLook]...\_w[1000]\c\0\s[panic]NEW PERSON!\_w[800]\0\s[eep]\n\nUm... Hi.\_w[800]\cMy name's Bee. I'm a rabbit terran, I'm 17 years old and I use she/they pronouns, and uh... My birthday is on June 12th? Um. It's nice to meet you.\n\nShould I call you %(username)?\_w[800]\n\n\s[think]Oh, right - if you need to set your name and other things in the baseware, you can right-click me and look under Options > Preferences > General.\_w[600]\n\n\s[proud]\w3\f[height,-2]The author said I'm allowed to break the fourth wall a little bit.\e"
+	firstBootDialogue = "\0\s[gaming]...\_w[1000] \0\s[gamingLook]...\_w[1000]\c\0\s[panic]NEW PERSON!\_w[800]\0\s[eep]\n\nUm... Hi.\_w[800]\cMy name's Bee. I'm a rabbit terran, I'm 17 years old and I use she/they pronouns, and uh... My birthday is on June 12th? Um. It's nice to meet you.\n\nShould I call you %(username)?\_w[800]\n\n\s[think]Oh, right - if you need to set your name and other things in the baseware, you can right-click me and look under Options > Preferences > General.\_w[600]\n\n\s[proud]\w3\f[height,-2]The author said I'm allowed to break the fourth wall a little bit."
 
 	CenterText(firstBootDialogue)
 }
@@ -35,23 +35,23 @@ OnBoot
 	--
 	if _today == _user_birthday
 	{
-		"\0\s[smile]Oh, %(user)! It's your birthday today, right? Happy birthday!"
+		"\0\s[smile]Oh, %(username)! It's your birthday today, right? Happy birthday!"
 	}
 	elseif _today == "6/12"
 	{
-		"\0\s[holdStarry]%(username)! I got a new game for my birthday!"
+		"\0\s[holdStarry]%(username)!||I got a new game for my birthday!"
 	}
 	elseif _today == "9/22"
 	{
-		"\0\s[smile]Hi, %(username)! It's Amanda's birthday today. We went out and watched a movie down at the theater with some of our other friends from school."
+		"\0\s[smile]Hi, %(username)! It's Amanda's|birthday today. We went out and watched a movie down at the theater with some of our other friends from school."
 	}
 	elseif _today == "11/3"
 	{
-		"\0\s[smile]Hello! It's my friend Milovan's birthday today."
+		"\0\s[smile]Hello! It's my friend|Milovan's birthday today."
 	}
 	elseif _today == "12/21"
 	{
-		"\0\s[smile]Today's Basil's birthday! He's my baby half-brother!"
+		"\0\s[smile]Today's Basil's birthday!|He's my baby half-brother!"
 	}
 	elseif _today == "10/31"
 	{
@@ -59,15 +59,15 @@ OnBoot
 	}
 	elseif _today == "12/24" || _today == "12/25" //Expand the dates on this later
 	{
-		"\0\s[tired]It's so cold out...\w8\n\n[half]\s[smile]The snow is pretty, though. Happy holidays!"
+		"\0\s[tired]It's so cold out...\w8|||\s[smile]The snow is pretty, though. Happy holidays!"
 	}
 	elseif _today == "12/31"
 	{
-		"\0\s[holdStarry]It's almost the new year! Last year, my step-dad let me try champagne.\w8\w8\n\n[half]\s[holdEep]I didn't like it."
+		"\0\s[holdStarry]It's almost the new year!|Last year, my step-dad let me try champagne. \w8\w8\s[holdEep]I didn't like it."
 	}
 	elseif _today == "1/1"
 	{
-		"\0\s[happy]It's a new year!\w8 Happy %(year),\w4 %(username)."
+		"\0\s[happy]It's a new year!\w8|Happy %(year),\w4 %(username)."
 	}
 	elseif weekday == 5
 	{
@@ -84,9 +84,9 @@ OnBoot
 		if friendship >= 1 {
 			"\0\s[starry]%(username)! The newest Masked Knight episode was so good! I wanna tell you everything but there's so many spoilers!"
 			if RAND == 0 {
-				"\0\s[holdStarry]I hatched my newest batch of Battle Beast eggs!\w_[800]\n\n...\_w[600]\n\nOne of them was a chroma!"
+				"\0\s[holdStarry]I hatched my newest|batch of Battle Beast eggs!\w5\s[holdExcited] One of them was a chroma!"
 			} else {
-				"\0\s[holdStarry]I hatched my newest batch of Battle Beast eggs!\w_[800]\n\n...\_w[600]\n\nNone of them were chromas, but that's okay!"
+				"\0\s[holdStarry]I hatched my newest|batch of Battle Beast eggs!\w5|||...\w5|||None of them were chromas, but that's okay!"
 			}
 		}
 	}
