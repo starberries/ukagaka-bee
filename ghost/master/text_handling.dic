@@ -86,6 +86,101 @@ AdjustLineCount {
   _lines
 }
 
+WrapDiamondText {
+  _text = _argv[0]
+  _lines = _argv[1]
+
+  if _lines < 1 {
+    _lines = 1
+  }
+
+  _retry = 0
+  _done = 0
+  _result = _text
+
+  _lines +": "+_text
+
+  while !_done && _retry < 100 {
+    _remaining = _text
+    _wrapped = ""
+    _line = 0
+    _failed = 0
+
+    // Attempt to fit the text into the requested number of lines.
+    while _line < _lines && STRLEN(_remaining) > 0 {
+      _maxWidth = GetDiamondLineWidth(_line, _lines)
+      _remainingLength = STRLEN(_remaining)
+
+      _width = 0
+      _i = 0
+      _lastSpace = -1
+      _excess = 0
+
+      // Scan characters until the next one would exceed the width.
+      while _i < _remainingLength && _excess == 0 {
+        _char = SUBSTR(_remaining, _i, 1)
+        _charWidth = GetCharWidth(_char)
+
+        if _width + _charWidth > _maxWidth {
+          _excess = 1
+        } else {
+          _width += _charWidth
+
+          if _char == " " {
+            _lastSpace = _i
+          }
+
+          _i++
+        }
+      }
+
+      if _excess == 0 {
+        // All remaining text fits on this line.
+        _wrapped += _remaining
+        _remaining = ""
+      } else {
+        if _lastSpace >= 0 {
+          // Split text at the last whitespace tracked.
+          _wrapped += SUBSTR(_remaining, 0, _lastSpace)
+          _remaining = SUBSTR(_remaining, _lastSpace + 1, _remainingLength - _lastSpace - 1)
+        } else {
+          // No whitespace fits: keep the longest fitting prefix.
+          // Force one character if even the first character is too wide.
+          if _i == 0; _i = 1
+
+          _wrapped += SUBSTR(_remaining, 0, _i)
+          _remaining = SUBSTR(_remaining, _i, _remainingLength - _i)
+        }
+      }
+
+      _line++
+
+      if STRLEN(_remaining) > 0 {
+        _wrapped += "\n"
+      }
+    }
+
+    // Decide whether the line count was appropriate.
+    if STRLEN(_remaining) > 0 {
+      // Not enough lines; try a taller diamond.
+      _lines++
+    } else {
+      if _line < _lines {
+        // Text ran out early; try a shorter diamond.
+        _lines--
+      } else {
+        _result = _wrapped
+        _done = 1
+      }
+    }
+
+    _retry++
+  }
+
+  _result
+}
+
+
 //=== Centered Dialogue for Comic Balloon ===
 
 OnNotifyBalloonInfo
