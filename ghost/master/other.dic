@@ -10,7 +10,6 @@ OnTranslate
 	if ComicBalloon
 	{
 		_talk = CenterText(_talk)
-		// _talk = ChooseBalloon(_talk) + TOINT(CalculateTextLines(_talk)) + ":" + DiamondWrapLineBreaks(_talk)
 		_talk = ChooseBalloon(_talk) + DiamondWrapLineBreaks(_talk)
 	}
 

@@ -1,36 +1,19 @@
-/*
-Assuming a stanard max line width is a score of 87
-maxWidth = 87
-1-line = 100%
-2-line = 100%
-3-line = 80% / 100%
-4-line = 80% / 100%
-5-line = 64%? / 80% / 100%
-6-line = 64%? / 80% / 100%
-7-line = 50%? / 64%? / 80% / 100%
-8-line = 50%? / 64%? / 80% / 100%
-9-line = 50%? / 64%? / 80% / 100%
-10-line = 40%? / 50% / 64% / 80% / 100%
-11-line = 40%? / 50% / 64% / 80% / 100%
+GetCharWidth {
+  _char = _argv[0]
 
-
-1. GetStringWidth for whole string
-2. Estimate the line count
-3. Split the text up into lines that fit the width of the current line #
-	1. Split the array into words
-	2. Get the character width of all characters in in the word and add them together
-	3. Add width of words until the current max line width is reached or as close as possible without going over
-	4. Check that it's longer than the previous line (if half or less of the intended line count) or shorter than the previous (if > half the intended line count)
-4. If the text runs out before the final line # is reached:
-	1. Stop the process
-	2. pick the next smallest line profile
-	3. Try again
-5. If there is text leftover after the final line # is filled:
-	1. Stop the process
-	2. Pick the next largest line profile
-	3. try again
-6. Otherwise, output the text as is (also pass the final line count for balloon choice)
-*/
+  case _char {
+    when "i", "j", "l", "I", ".", ",", "!", ";", "'"
+      1
+    when "J", "1", "-", "*", "(", ")", '"', "/", "|"
+      2
+    when "g", "m", "w", "M", "Q", "@"
+      4
+    when "W"
+      5
+    others
+      3
+  }
+}
 
 GetStringWidth {
   _text = RemoveSakuraScript(_argv[0])
@@ -38,40 +21,40 @@ GetStringWidth {
 
   for _i; _i < STRLEN(_text); _i++ {
     _char = SUBSTR(_text, _i, 1)
-
-    case _char {
-      when "i", "j", "l", "I", ".", ",", "!", ";", "'"
-        _width += 1
-      when "J", "1", "-", "*", "(", ")", '"', "/", "|"
-        _width += 2
-      when "g", "m", "w", "M", "Q", "@"
-        _width += 4
-      others
-        _width += 3
-    }
+    _width += GetCharWidth(_char)
   }
 
   _width
 }
 
-GetDiamondProfiles {
-  _i = _argv[0]
-  _profiles = IARRAY
-  
-  _profiles,="1.0" // 1-2 line
-  _profiles,="0.8, 1.0" // 3-4 line
-  _profiles,="0.65, 0.8, 1.0" // 5-6 line
-  _profiles,="0.5, 0.65, 0.8, 1.0" // 7-8 line
-  _profiles,="0.4, 0.5, 0.65, 0.8, 1.0" // 9-10 line
-  _profiles,="0.3, 0.4, 0.5, 0.65, 0.8, 1.0" // 11+ line
+GetDiamondLineWidth {
+  _line = _argv[0]
+  _lines = _argv[1]
+  _baseWidth = maxLineWidth
 
-  _profiles[_i]
+  // Distance from middle line(s).
+  _distance = _line
+  if _lines - 1 - _line < _distance {
+    _distance = _lines - 1 - _line
+  }
+
+  _factor = 1.0
+  case _distance {
+    when 1; _factor = 0.8
+    when 2; _factor = 0.65
+    when 3; _factor = 0.5
+    when 4; _factor = 0.4
+    when 5; _factor = 0.3
+    others; _factor = 0.25
+  }
+
+  ROUND(_baseWidth * _factor)
 }
 
 CalculateLineCount {
   _text = _argv[0]
   _width = GetStringWidth(_text)
-  _maxWidth = 87
+  _maxWidth = 81
   _currentLine = 0
   _lineWidth = _maxWidth
   _expectedLines = 1
@@ -82,12 +65,10 @@ CalculateLineCount {
       _expectedLines++
       break
     } else {
-      _maxWidth -= _maxWidth * (_currentLine * 0.2) // Get current line max width
+      _maxWidth -= ROUND(_maxWidth * (_currentLine * 0.2)) // Get current line max width
       _leftover -= _maxWidth * 2 // Deduct current max width from leftover width for two lines
       _expectedLines += 2
     }
-
-    // _leftover - 1
   }
 
   _expectedLines = AdjustLineCount(_text, _expectedLines)
@@ -186,7 +167,7 @@ ChooseBalloon
 	}
 
 	_result = "\b[%(_b)]" + _buffer
-	_result
+  _result
 }
 
 CountSubstring
