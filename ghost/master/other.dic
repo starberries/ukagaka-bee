@@ -11,6 +11,8 @@ OnTranslate
 	{
 		_talk = CenterText(_talk)
 		_talk = ChooseBalloon(_talk) + DiamondWrapLineBreaks(_talk)
+	} else {
+		DiamondWrapLineBreaks(_talk)
 	}
 
 	TOSTR(_talk)
