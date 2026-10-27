@@ -7,6 +7,8 @@ Baseware: SSP
 
 _Made for the [Digital Pet Jam](https://itch.io/jam/digital-pet-jam)_
 
+![A Bee on the desktop](https://i.imgur.com/3wkv1MY.png)
+
 ## It's Beeeeee!!
 
 Bee of [On Starlit Tides](https://on-starlit-tides.thecomicseries.com/) is a high school junior attending Blossom High in the cozy town of Port Blossom.
