@@ -1,6 +1,3 @@
-//This file handles a couple little QOL functions you may want, as well as default text for some events since SSP doesn't provide defaults. But these are not necessary! If you don't care for them just erase them. If you don't want to set up network updates, you can comment or remove the update functions too. If you're not interested in any of these, just remove the whole file!
-//If you are interested in expanding on these events, I've included links to their documentation in ukadoc for easy reference
-
 //—————————————————————————————— Installing something ——————————————————————————————
 //https://ukagakadreamteam.github.io/ukadoc/manual/list_shiori_event.html#OnInstallBegin
 
@@ -8,7 +5,6 @@ OnInstallComplete
 {
 	"\0\s[0]Installed %(reference1) (%(reference0))."
 	--
-	//A little menu to open or change to the ghost that was installed immediately
 	if "ghost" _in_ reference0
 	{
 		"\n\n\_q"
@@ -70,19 +66,18 @@ OnNarLocation
 
 OnUpdateBegin
 {
-	"\0\s[0]Checking for updates.\w8"
+	"\0\s[0]Okay! Let's see if there's any updates...\w8"
 }
 
 //reference0 is the number of new files, starting from 0
 OnUpdateReady
 {
 	reference0++ //Number of files starts from 0, so this displays the correct amount
-	
-	//plural checks, adds an s and changes is to are if there's more than 1 file
+
 	_s = ""; _are = "is"
 	if reference0 != 1; {_s = "s"; _are = "are"}
 	
-	"\0\s[0]There %(_are) %(reference0) new file%(_s).\w8"
+	"\0\s[surprise]Oh, there %(_are) %(reference0) new file%(_s).\w8"
 }
 
 //When the update finishes. Don't forget to initialize any new variables you've created! I highly highly recommend using OnInitialize for this (it's in boot.dic), in case the user updates via the ghost explorer or some other means.
@@ -91,11 +86,11 @@ OnUpdateComplete
 {
 	if reference0 == "none"
 	{
-		"\0\s[0]There are no new files."
+		"\0\s[0]Hmm nope, nothing new."
 	}
 	else
 	{
-		"\0\s[0]Update complete."
+		"\0\s[smile]Okay, update's done."
 	}
 }
 

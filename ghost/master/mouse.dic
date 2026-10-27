@@ -35,12 +35,22 @@ OnMouseMove.Sakura
 {
 	if reference4 == "head"
 	{
-		"\0\s[proud]That's actually pretty nice."
+		if friendship >= 15
+			"\0\s[proud]That's actually pretty nice."
+		elseif friendship >= 10
+			"\0\s[pout]Hmm..."
+		else
+			"\0\s[ack]No touching!"
 	} 
 
 	if reference4 == "earL" || reference4 == "earR"
 	{
-		"\0\s[proud]Aren't my ears soft?"
+		if friendship >= 15
+			"\0\s[proud]Aren't my ears soft?"
+		elseif friendship >= 10
+			"\0\s[pout]Hmm..."
+		else
+			"\0\s[ack]No touching!"
 	}
 }
 
@@ -52,13 +62,13 @@ OnMouseClick
 	}
 }
 
-OnMouseMove.Kero
-{
-	if reference4 == "head"
-	{
-		"\1\s[10]Petting..."
-	}
-}
+//OnMouseMove.Kero
+//{
+//	if reference4 == "head"
+//	{
+//		"\1\s[10]Petting..."
+//	}
+//}
 
 OnMouseLeaveAll
 {

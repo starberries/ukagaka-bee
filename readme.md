@@ -1,6 +1,6 @@
 ﻿# README
 
-Version: 0.7.3 (Alpha)
+Version: 1.0.0
 
 SHIORI: YAYA
 Baseware: SSP

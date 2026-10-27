@@ -56,7 +56,7 @@ RandomTalkSub_Weekday : array
   if GetTimeSlot == "early_morning" || GetTimeSlot == "morning"
     "\0\s[smile]Amanda texted me last night. She said she got new fur clips and stuff so we're gonna try out some looks in homeroom."
 
-  "\0\s[eep]Ayako came to school|with a karaoke mic today...|\w8I didn't think she'd actually|use it in class."
+  "\0\s[eep]My classmate Ayako|came to school with a karaoke mic today... \w8I didn't think she'd actually use it in class."
 
   if GetTimeSlot == "afternoon"
     "\0\s[holdPlayful]School's out for the day, and it's time to play some games!"
@@ -70,7 +70,7 @@ RandomTalkSub_Holiday : array
     "\0\s[playful]It's the spooky day!"
 
   // === Christmas ===
-  if _today == "12/25" // Update the date here
+  if month == 12 && day >= 10
     "\0\s[holdHappy]Happy winter holidays!"
 
   // === New Year's Eve ===
