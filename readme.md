@@ -13,7 +13,7 @@ Bee of [On Starlit Tides](https://on-starlit-tides.thecomicseries.com/) is a hig
 
 Bee will hang out with you and talk about their day, interests, friends, or whatever else she thinks of. She likes chroma-hunting in her favorite game series Battle Beasts.
 
-Bee has code intended to be used with my [Comic Balloon](https://github.com/starberries/ukagaka-balloon-comic), but her dialogue should be fine with other balloons as well!
+Bee has code intended to be used with my [Comic Balloon](https://github.com/starberries/ukagaka-balloon-comic), but her dialogue should be fine with other balloons as well! (The balloon is currently packed with Bee, though I ran into a lot of bugs in doing so, so there's a possibility that might change in future updates.)
 
 ### Current Features
 
