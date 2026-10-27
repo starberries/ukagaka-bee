@@ -107,8 +107,8 @@ DiamondWrapLineBreaks
 		_text = REPLACE(_text, "||", "\n")
 		_text = REPLACE(_text, "|", "\n")
 	} else { 
-		_text = REPLACE(_text, '||', " ")
-		_text = REPLACE(_text, '|', " ")
+		_text = REPLACE(_text, "||", " ")
+		_text = REPLACE(_text, "|", " ")
 	}
 	_text
 }

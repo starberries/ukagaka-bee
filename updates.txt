@@ -2,7 +2,7 @@ charset,OSNative
 file,.gitattributes05bdb783ee6514c8c072e47680af8ff7size=66date=2025-03-07T10:54:28
 file,.gitignore0d614723a9b1ff69cd5b0ce0beb9bb45size=111date=2026-10-27T11:27:40
 file,install.txt406cbf7d0f1b027c78da7832cce30624size=87date=2026-10-27T12:40:51
-file,readme.md790fc9e34e083e0a5c7a043f823765absize=1574date=2026-10-27T12:36:23
+file,readme.md205b845c0fa580d47f4266c6c6031a82size=1634date=2026-10-27T16:43:26
 file,thumbnail.png87ad7f150620e1f489e262752c5bb7a6size=54694date=2026-09-26T23:36:34
 file,ghost/master/aitalk.dic53a7a1315a895b40aab582b28b10cde1size=2691date=2026-10-18T01:20:19
 file,ghost/master/aitalk_datetime.dic7ae07373a3b5efb7890c9258cdb65c15size=4940date=2026-10-27T11:31:35
@@ -16,8 +16,8 @@ file,ghost/master/menu_kero.dic373c18b75e4a382a3458a2e1bb6974ebsize=1057date=
 file,ghost/master/menu_sakura.dic2ba10c3df7569bb9520a7b4ddfbce936size=1789date=2026-10-27T11:18:00
 file,ghost/master/meta.dicb14d46cdabaf5b1a21590aca12dd9e95size=5321date=2026-10-27T11:31:35
 file,ghost/master/mouse.dic436a488429636da61652996a47e9d7c3size=1108date=2026-10-27T11:31:35
-file,ghost/master/other.dicfb7641eb58e61b46416c8a32b56cb4cdsize=4000date=2026-10-27T11:01:10
-file,ghost/master/text_handling.dice41b732d1b68290c4ed32440351e9130size=3908date=2026-10-27T11:01:10
+file,ghost/master/other.dic0c929a32ccecc86353464a6b612246c5size=4043date=2026-10-27T16:42:40
+file,ghost/master/text_handling.diccf77e193270a556bc154fceccad8ad56size=3908date=2026-10-27T16:45:15
 file,ghost/master/word.dicb0c8b1b298e4f38bdb6e2c2843e518bfsize=1536date=2026-10-18T01:20:19
 file,ghost/master/yaya.dllf0b27a44b379d74049cf704580ec563dsize=2125824date=2026-10-13T12:51:38
 file,ghost/master/yaya.txt931b31ed4510a251d652232b665ec99csize=870date=2026-10-27T11:01:10
