@@ -66,7 +66,7 @@ RandomTalkSubArray: array
 		parallel RandomTalkParallel("RandomTalkSub_Friday")
 	elseif weekday == 6
 		parallel RandomTalkParallel("RandomTalkSub_Saturday")
-	elseif weekday == 6 || weekday == 7
+	elseif GetIsWeekend
 		parallel RandomTalkParallel("RandomTalkSub_Weekend")
 	else
 		parallel RandomTalkParallel("RandomTalkSub_Weekday")
@@ -83,19 +83,10 @@ RandomTalkSubArray: array
 	parallel RandomTalkParallel("RandomTalkSub_%(_sd)_%(_t)")
 	
 	// === Time-Based Dialogue ===
-	parallel RandomTalkParallel("BootRandomTalkSub_%(_t)")
 	parallel RandomTalkParallel("RandomTalkSub_%(_t)")
 	
 	// === Month Dialogue ===
 	parallel RandomTalkParallel("RandomTalkSub_%(_m)")
-	_tmparray = IARRAY
-	if day <= 15 {
-		_tmparray = RandomTalkParallel("RandomTalkSub_%(_m)_firsthalf")
-	}
-	else {
-		_tmparray = RandomTalkParallel("RandomTalkSub_%(_m)_secondhalf")
-	}
-	parallel _tmparray
 
 	// === Holiday/Special Date Dialogue ===
 	parallel RandomTalkParallel("RandomTalkSub_Holiday")

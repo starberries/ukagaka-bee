@@ -1,5 +1,5 @@
 // === Time Slots ===
-RandomTalk_Sub_Early_Morning : array
+RandomTalkSub_Early_Morning : array
 {
   "\0\s[sleep]Zzz..."
   "\0\s[tired]It's early..."
@@ -7,7 +7,7 @@ RandomTalk_Sub_Early_Morning : array
   "\0\s[surprise]I can't believe the|birds outside are so|active already."
 }
 
-RandomTalk_Sub_Morning : array
+RandomTalkSub_Morning : array
 {
   "\0\s[holdThink]Why do you think|scrambled eggs are mostly|a breakfast food?"
 }
