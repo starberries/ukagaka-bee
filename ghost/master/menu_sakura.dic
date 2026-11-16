@@ -53,8 +53,6 @@ OnCofigMenu : all
 	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Cancel,blank]"
 }
 
-
-
 OnChangeHemisphere
 {
 	_flag = ToggleFlag("southern")

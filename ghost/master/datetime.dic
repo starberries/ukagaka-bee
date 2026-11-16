@@ -117,29 +117,56 @@ GetIsWeekend
 // === Get General Season ===
 GetSeason
 {
-	case month
-	{
-		when 3-5; "spring"
-		when 6-8; "summer"
-		when 9-11; "fall"
-		others; "winter"
+	if !CheckFlag("southern") {
+		case month
+		{
+			when 3-5; "spring"
+			when 6-8; "summer"
+			when 9-11; "fall"
+			others; "winter"
+		}
+	} else {
+		case month
+		{
+			when 3-5; "fall"
+			when 6-8; "winter"
+			when 9-11; "spring"
+			others; "summer"
+		}
 	}
 }
 
 GetSeasonDetail
 {
-	case month {
-		when 1; "mid_winter"
-		when 2; "late_winter"
-		when 3; "early_spring"
-		when 4; "mid_spring"
-		when 5; "late_spring"
-		when 6; "early_summer"
-		when 7; "mid_summer"
-		when 8; "late_summer"
-		when 9; "early_fall"
-		when 10; "mid_fall"
-		when 11; "late_fall"
-		when 12; "early_winter"
+	if !CheckFlag("southern") {
+		case month {
+			when 1; "mid_winter"
+			when 2; "late_winter"
+			when 3; "early_spring"
+			when 4; "mid_spring"
+			when 5; "late_spring"
+			when 6; "early_summer"
+			when 7; "mid_summer"
+			when 8; "late_summer"
+			when 9; "early_fall"
+			when 10; "mid_fall"
+			when 11; "late_fall"
+			when 12; "early_winter"
+		}
+	} else {
+		case month {
+			when 1; "mid_summer"
+			when 2; "late_summer"
+			when 3; "early_fall"
+			when 4; "mid_fall"
+			when 5; "late_fall"
+			when 6; "early_winter"
+			when 7; "mid_winter"
+			when 8; "late_winter"
+			when 9; "early_spring"
+			when 10; "mid_spring"
+			when 11; "late_spring"
+			when 12; "early_summer"
+		}
 	}
 }
