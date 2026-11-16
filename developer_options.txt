@@ -1,0 +1,5 @@
+ghost/master/profile/,nonar,noupdate
+shell/master/profile/,nonar,noupdate
+ghost/master/kawari.log,nonar,noupdate
+.git/,nonar,noupdate
+developer_options.txt,nonar,noupdate

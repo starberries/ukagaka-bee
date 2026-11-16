@@ -1,7 +1,6 @@
 charset,OSNative
 file,.gitattributes05bdb783ee6514c8c072e47680af8ff7size=66date=2025-03-07T10:54:28
 file,.gitignore0d614723a9b1ff69cd5b0ce0beb9bb45size=111date=2026-10-27T11:27:45
-file,developer_options.txtf9b796357afa86c83354476436435248size=133date=2026-11-15T19:33:56
 file,install.txtbb2e5bc248ccb578cdc5f53423f4484dsize=94date=2026-10-27T17:08:34
 file,readme.md31c2eff08e27ce9a1ca2e1495379c276size=1634date=2026-11-15T18:43:42
 file,thumbnail.png87ad7f150620e1f489e262752c5bb7a6size=54694date=2026-09-22T21:51:01
