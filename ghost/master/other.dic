@@ -161,6 +161,16 @@ CheckFlag
 	else; 0
 }
 
+ToggleFlag
+{
+	_flag = _argv[0]
+	if !CheckFlag(_flag)
+		flags ,= _flag
+	else
+		RemoveFlag(_flag)
+
+}
+
 RemoveFlag
 {
 	_elements = ASEARCHEX(_argv[0],flags)

@@ -22,6 +22,7 @@ OnSakuraMenu : all
 	"\n\n"
 	
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
+	"\![*]\q[Change config,OnCofigMenu]\n\n"
 	
 	"\![*]\q[Cancel,blank]"	
 }
@@ -39,6 +40,25 @@ OnToggleDebug
 OnLastTalk
 {
 	LastTalk
+}
+
+OnCofigMenu : all
+{
+	"\0\s[0]\![set,autoscroll,disable]\_q"
+	"Config? Okay.\n\n"
+	if !CheckFlag("southern"); "\![*]\q[Hemisphere: Northern,OnChangeHemisphere]\n"
+	if CheckFlag("southern"); "\![*]\q[Hemisphere: Southern,OnChangeHemisphere]\n"
+
+	"\n"
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Cancel,blank]"
+}
+
+
+
+OnChangeHemisphere
+{
+	_flag = ToggleFlag("southern")
+	OnCofigMenu
 }
 
 OnTalkRateMenu : all
